@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mushroom Poison Detector</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+  
+</head>
+
+<body>
+    {% include 'includes/navbar.html' %}
+
+ <div class="container center">
+	<h1>Mushroom Poison Detector</h1>
+
+     <!-- Form to enter new data for predictions  -->
+    <!-- <form action="{{ url_for('mushroom_page')}}"method="POST">
+      <input type="text" name="age" placeholder="Age" required="required" /><br>
+    	<input type="text" name="sex" placeholder="Sex" required="required" /><br>
+        <input type="text" name="bmi" placeholder="BMI" required="required" /><br>
+        <input type="text" name="children" placeholder="Children" required="required" /><br>
+        <input type="text" name="smoker" placeholder="Smoker" required="required" /><br>
+        <input type="text" name="region" placeholder="Region" required="required" /><br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form> -->
+
+    <form action="{{ url_for('mushroom_page')}}" method="POST">
+      <!-- cap-shape -->
+      <label for="cap-shape">Cap Shape:</label>
+      <select id="cap-shape" name="cap-shape">
+        <option value="convex">Convex</option>
+        <option value="bell">Bell</option>
+        <option value="sunken">Sunken</option>
+        <option value="flat">Flat</option>
+        <option value="knobbed">Knobbed</option>
+        <option value="conical">Conical</option>
+      </select>
+      <br/>
+    
+      <!-- cap-surface -->
+      <label for="cap-surface">Cap Surface:</label>
+      <select id="cap-surface" name="cap-surface">
+        <option value="smooth">Smooth</option>
+        <option value="scaly">Scaly</option>
+        <option value="fibrous">Fibrous</option>
+        <option value="grooves">Grooves</option>
+      </select>
+      <br/>
+    
+      <!-- cap-color -->
+      <label for="cap-color">Cap Color:</label>
+      <select id="cap-color" name="cap-color">
+        <option value="brown">Brown</option>
+        <option value="yellow">Yellow</option>
+        <option value="white">White</option>
+        <option value="gray">Gray</option>
+        <option value="red">Red</option>
+        <option value="pink">Pink</option>
+        <option value="buff">Buff</option>
+        <option value="purple">Purple</option>
+        <option value="cinnamon">Cinnamon</option>
+        <option value="green">Green</option>
+      </select>
+      <br/>
+    
+      <!-- bruises -->
+      <label for="bruises">Are there bruises:</label>
+      <select id="bruises" name="bruises">
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+      </select>
+      <br/>
+    
+      <!-- odor -->
+      <label for="odor">Odor:</label>
+      <select id="odor" name="odor">
+        <option value="pungent">Pungent</option>
+        <option value="almond">Almond</option>
+        <option value="anise">Anise</option>
+        <option value="none">None</option>
+        <option value="foul">Foul</option>
+        <option value="creosote">Creosote</option>
+        <option value="fishy">Fishy</option>
+        <option value="spicy">Spicy</option>
+        <option value="musty">Musty</option>
+      </select>
+      <br/>
+    
+      <!-- gill-attachment -->
+      <label for="gill-attached">Gill Attached:</label>
+      <select id="gill-attached" name="gill-attached">
+        <option value='1'>Attached</option>
+        <option value='0'>Not Attached</option>
+      </select>
+      <br/>
+    
+      <!-- gill-spacing -->
+      <label for="gill-spacing">Gill Spacing:</label>
+      <select id="gill-spacing" name="gill-spacing">
+        <option value="close">Close</option>
+        <option value="crowded">Crowded</option>
+      </select>
+      <br/>
+    
+      <!-- gill-size -->
+      <label for="gill-size">Gill Size:</label>
+      <select id="gill-size" name="gill-size">
+        <option value="narrow">Narrow</option>
+        <option value="broad">Broad</option>
+      </select>
+      <br/>
+    
+      <!-- gill-color -->
+      <label for="gill-color">Gill Color:</label>
+      <select id="gill-color" name="gill-color">
+        <option value="black">Black</option>
+        <option value="brown">Brown</option>
+        <option value="gray">Gray</option>
+        <option value="pink">Pink</option>
+        <option value="white">White</option>
+        <option value="chocolate">Chocolate</option>
+        <option value="purple">Purple</option>
+        <option value="red">Red</option>
+        <option value="buff">Buff</option>
+        <option value="green">Green</option>
+        <option value="yellow">Yellow</option>
+        <option value="orange">Orange</option>
+      </select>
+      <br/>
+    
+      <!-- stalk-shape -->
+      <label for="stalk-shape">Stalk Shape:</label>
+      <select id="stalk-shape" name="stalk-shape">
+        <option value="enlarging">Enlarging</option>
+        <option value="tapering">Tapering</option>
+      </select>
+      <br/>
+    
+      <!-- stalk-root -->
+      <label for="stalk-root">Stalk Root:</label>
+      <select id="stalk-root" name="stalk-root">
+        <option value="equal">Equal</option>
+        <option value="club">Club</option>
+        <option value="bulbous">Bulbous</option>
+        <option value="rooted">Rooted</option>
+      </select>
+      <br/>
+    
+      <!-- stalk-surface-above-ring -->
+      <label for="stalk-surface-above-ring">Stalk Surface Above Ring:</label>
+      <select id="stalk-surface-above-ring" name="stalk-surface-above-ring">
+        <option value="smooth">Smooth</option>
+        <option value="fibrous">Fibrous</option>
+        <option value="silky">Silky</option>
+        <option value="scaly">Scaly</option>
+      </select>
+      <br/>
+    
+      <!-- stalk-surface-below-ring -->
+      <label for="stalk-surface-below-ring">Stalk Surface Below Ring:</label>
+      <select id="stalk-surface-below-ring" name="stalk-surface-below-ring">
+        <option value="smooth">Smooth</option>
+        <option value="fibrous">Fibrous</option>
+        <option value="scaly">Scaly</option>
+        <option value="silky">Silky</option>
+      </select>
+      <br/>
+    
+      <!-- stalk-color-above-ring -->
+      <label for="stalk-color-above-ring">Stalk Color Above Ring:</label>
+      <select id="stalk-color-above-ring" name="stalk-color-above-ring">
+        <option value="white">White</option>
+        <option value="gray">Gray</option>
+        <option value="pink">Pink</option>
+        <option value="brown">Brown</option>
+        <option value="buff">Buff</option>
+        <option value="red">Red</option>
+        <option value="orange">Orange</option>
+        <option value="cinnamon">Cinnamon</option>
+        <option value="yellow">Yellow</option>
+      </select>
+      <br/>
+    
+      <!-- stalk-color-below-ring -->
+      <label for="stalk-color-below-ring">Stalk Color Below Ring:</label>
+      <select id="stalk-color-below-ring" name="stalk-color-below-ring">
+        <option value="white">White</option>
+        <option value="pink">Pink</option>
+        <option value="gray">Gray</option>
+        <option value="buff">Buff</option>
+        <option value="brown">Brown</option>
+        <option value="red">Red</option>
+        <option value="yellow">Yellow</option>
+        <option value="orange">Orange</option>
+        <option value="cinnamon">Cinnamon</option>
+      </select>
+      <br/>
+    
+      <!-- veil-color -->
+      <label for="veil-color">Veil Color:</label>
+      <select id="veil-color" name="veil-color">
+        <option value="white">White</option>
+        <option value="brown">Brown</option>
+        <option value="orange">Orange</option>
+        <option value="yellow">Yellow</option>
+      </select>
+      <br/>
+    
+      <!-- ring-number -->
+      <label for="ring-number">Ring Number:</label>
+      <input type="number" id="ring-number" name="ring-number" min="0" max="2" step="1">
+      <br/>
+    
+      <!-- ring-type -->
+      <label for="ring-type">Ring Type:</label>
+      <select id="ring-type" name="ring-type">
+        <option value="pendant">Pendant</option>
+        <option value="evanescent">Evanescent</option>
+        <option value="large">Large</option>
+        <option value="flaring">Flaring</option>
+        <option value="none">None</option>
+      </select>
+      <br/>
+    
+      <!-- spore-print-color -->
+      <label for="spore-print-color">Spore Print Color:</label>
+      <select id="spore-print-color" name="spore-print-color">
+        <option value="black">Black</option>
+        <option value="brown">Brown</option>
+        <option value="purple">Purple</option>
+        <option value="chocolate">Chocolate</option>
+        <option value="white">White</option>
+        <option value="yellow">Yellow</option>
+        <option value="green">Green</option>
+        <option value="orange">Orange</option>
+        <option value="buff">Buff</option>
+      </select>
+      <br/>
+    
+      <!-- population -->
+      <label for="population">Population:</label>
+      <select id="population" name="population">
+        <option value="scattered">Scattered</option>
+        <option value="numerous">Numerous</option>
+        <option value="abundant">Abundant</option>
+        <option value="solitary">Solitary</option>
+        <option value="clustered">Clustered</option>
+        <option value="several">Several</option>
+      </select>
+      <br/>
+    
+      <!-- habitat -->
+      <label for="habitat">Habitat:</label>
+      <select id="habitat" name="habitat">
+        <option value="woods">Woods</option>
+        <option value="paths">Paths</option>
+        <option value="urban">Urban</option>
+        <option value="grasses">Grasses</option>
+        <option value="meadows">Meadows</option>
+        <option value="waste">Waste</option>
+      </select>
+      <br/>
+  
+      
+      <!-- Submit button -->
+      <input type="submit" class="btn btn-primary btn-block btn-large" value="Predict Edibility">
+    </form>
+    
+
+   <br>
+   <br>
+  
+   
+ </div>
+ <!-- Bootstrap Modal for displaying prediction -->
+ <div class="modal fade" id="predictionModal" tabindex="-1" role="dialog" aria-labelledby="predictionModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="predictionModalLabel">Prediction Result</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+            The mushroom you are describing is 
+            <b style="color: {{ 'red' if pred == 'poisonous' else 'green' }};">{{ pred }}</b>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9BGEucVf6ZlhT0j8nppw/M+RQRf4bJ6hb0RO" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+  $(document).ready(function(){
+    {% if pred %}
+    $('#predictionModal').modal('show');
+    {% endif %}
+  });
+</script>
+
+<script>
+  nav = document.getElementsByClassName("nav-item");
+  nav[0].classList.remove("active");
+  nav[1].classList.remove("active");
+  nav[2].classList.add("active");
+  nav[3].classList.remove("active");
+</script>
+
+</body>
+
+
+
+</html>

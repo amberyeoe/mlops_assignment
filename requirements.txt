@@ -1,0 +1,5 @@
+pycaret == 3.3.2
+pandas == 2.1.4
+Flask ==
+Jinja2 == 
+gunicorn ==
