@@ -3,6 +3,7 @@ from flask import Flask, request, url_for, redirect, render_template, jsonify
 # from pycaret.regression import *
 # from pycaret.classification import *
 
+import os
 import pycaret.classification as pc
 
 # from pycaret.anomaly import *
@@ -96,4 +97,5 @@ def predict_mushroom_api():
 
 
 if __name__ == "__main__":
-    app.run(debug=False, port=5000)
+    port = int(os.environ.get("PORT", 4000))
+    app.run(debug=False, host="0.0.0.0", port=port)
