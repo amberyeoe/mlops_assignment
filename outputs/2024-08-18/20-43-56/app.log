@@ -1,0 +1,45 @@
+[2024-08-18 20:43:56,881][werkzeug][INFO] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://192.168.1.18:4000
+[2024-08-18 20:43:56,881][werkzeug][INFO] - [33mPress CTRL+C to quit[0m
+[2024-08-18 20:44:02,060][app][ERROR] - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Amber\Downloads\mlops_assignment\src\app.py", line 39, in home
+    return render_template("home.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\Amber\Downloads\mlops_assignment\templates\home.html", line 22, in top-level template code
+    <a href="{{ url_for('house_page') }}" class="btn btn-primary">Go to House Price Prediction</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 950, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'house_page'. Did you mean 'mushroom_page' instead?
+[2024-08-18 20:44:02,176][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 20:44:02] "[35m[1mGET / HTTP/1.1[0m" 500 -
