@@ -1,0 +1,10 @@
+[2024-08-18 22:12:58,514][werkzeug][WARNING] -  * Debugger is active!
+[2024-08-18 22:12:58,519][werkzeug][INFO] -  * Debugger PIN: 130-875-148
+[2024-08-18 22:13:10,819][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 22:13:10] "GET /mushroom-poison-detector HTTP/1.1" 200 -
+[2024-08-18 22:13:10,852][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 22:13:10] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-18 22:13:16,027][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 22:13:16] "POST /mushroom-poison-detector HTTP/1.1" 200 -
+[2024-08-18 22:13:16,046][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 22:13:16] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-18 22:57:09,733][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 22:57:09] "GET / HTTP/1.1" 200 -
+[2024-08-18 22:57:13,015][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 22:57:13] "GET /mushroom-poison-detector HTTP/1.1" 200 -
+[2024-08-18 22:57:13,065][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 22:57:13] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-18 23:28:23,741][werkzeug][INFO] -  * Detected change in 'c:\\Users\\Amber\\Downloads\\mlops_assignment\\src\\app.py', reloading

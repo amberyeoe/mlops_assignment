@@ -45,9 +45,8 @@ def mushroom_page():
         features = [x for x in request.form.values()]
         final = np.array(features)
         data_unseen = pd.DataFrame([final], columns=variables.columns.mushroom)
-        # print(data_unseen['bruises'])
 
-        int_columns = ["bruises", "gill-attached", "ring-number"]
+        int_columns = ["bruises"]
         data_unseen[int_columns] = data_unseen[int_columns].astype(int)
 
         prediction = pc.predict_model(mushroom_model, data=data_unseen)
@@ -63,9 +62,8 @@ def predict_mushroom_api():
     features = [x for x in request.form.values()]
     final = np.array(features)
     data_unseen = pd.DataFrame([final], columns=variables.columns.mushroom)
-    # print(data_unseen['bruises'])
 
-    int_columns = ["bruises", "gill-attached", "ring-number"]
+    int_columns = ["bruises"]
     data_unseen[int_columns] = data_unseen[int_columns].astype(int)
 
     prediction = pc.predict_model(mushroom_model, data=data_unseen)
