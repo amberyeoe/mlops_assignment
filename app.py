@@ -60,25 +60,27 @@ def mushroom_page():
     data_unseen = pd.DataFrame([final], columns=amber_cols)
     # print(data_unseen['bruises'])
 
-    int_columns = ['bruises', 'gill-attached', 'ring-number']  # Replace with actual column names
+    int_columns = ["bruises", "gill-attached", "ring-number"]
     data_unseen[int_columns] = data_unseen[int_columns].astype(int)
 
     prediction = predict_model(amber_model, data=data_unseen)
     prediction = prediction["prediction_label"].values[0]
 
-    return render_template(
-        "amber/mushroom_poison_detector.html",
-        pred=prediction
-    )
+    return render_template("amber/mushroom_poison_detector.html", pred=prediction)
 
 
 @app.route("/predict-mushroom-api", methods=["POST"])
 def predict_mushroom_api():
-    data = request.get_json(force=True)
-    data_unseen = pd.DataFrame([data])
+    features = [x for x in request.form.values()]
+    final = np.array(features)
+    data_unseen = pd.DataFrame([final], columns=amber_cols)
+
+    int_columns = ["bruises", "gill-attached", "ring-number"]
+    data_unseen[int_columns] = data_unseen[int_columns].astype(int)
+
     prediction = predict_model(amber_model, data=data_unseen)
-    output = prediction["prediction_label"]
-    return jsonify(output)
+    prediction = prediction["prediction_label"].values[0]
+    return jsonify(prediction)
 
 
 # @app.route("/house-price-prediction")
@@ -105,4 +107,4 @@ def predict_mushroom_api():
 
 
 if __name__ == "__main__":
-    app.run(debug=False, host='0.0.0.0')
+    app.run(debug=False)
