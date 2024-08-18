@@ -1,0 +1,26 @@
+model:
+  amber:
+    path: models/mushroom-pipeline
+columns:
+  amber:
+  - cap-shape
+  - cap-surface
+  - cap-color
+  - bruises
+  - odor
+  - gill-attached
+  - gill-spacing
+  - gill-size
+  - gill-color
+  - stalk-shape
+  - stalk-root
+  - stalk-surface-above-ring
+  - stalk-surface-below-ring
+  - stalk-color-above-ring
+  - stalk-color-below-ring
+  - veil-color
+  - ring-number
+  - ring-type
+  - spore-print-color
+  - population
+  - habitat

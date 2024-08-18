@@ -1,0 +1,9 @@
+[2024-08-18 17:31:47,986][werkzeug][INFO] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2024-08-18 17:31:47,987][werkzeug][INFO] - [33mPress CTRL+C to quit[0m
+[2024-08-18 17:31:56,544][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 17:31:56] "GET /mushroom-poison-detector HTTP/1.1" 200 -
+[2024-08-18 17:31:56,581][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 17:31:56] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-18 17:32:00,758][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 17:32:00] "POST /mushroom-poison-detector HTTP/1.1" 200 -
+[2024-08-18 17:32:00,787][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 17:32:00] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-18 17:32:08,306][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 17:32:08] "POST /mushroom-poison-detector HTTP/1.1" 200 -
+[2024-08-18 17:32:08,333][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 17:32:08] "[33mGET /static/style.css HTTP/1.1[0m" 404 -

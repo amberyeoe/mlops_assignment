@@ -1,0 +1,32 @@
+[2024-08-18 16:51:35,847][werkzeug][INFO] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2024-08-18 16:51:35,862][werkzeug][INFO] - [33mPress CTRL+C to quit[0m
+[2024-08-18 16:51:40,421][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 16:51:40] "GET / HTTP/1.1" 200 -
+[2024-08-18 16:51:44,261][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 16:51:44] "GET /mushroom-poison-detector HTTP/1.1" 200 -
+[2024-08-18 16:51:44,301][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 16:51:44] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-18 16:51:47,871][app][ERROR] - Exception on /mushroom-poison-detector [POST]
+Traceback (most recent call last):
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\Downloads\mlops_assignment\src\app.py", line 88, in mushroom_page
+    data_unseen[int_columns] = data_unseen[int_columns].astype(int)
+                               ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\frame.py", line 3899, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\indexes\base.py", line 6115, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\indexes\base.py", line 6176, in _raise_if_missing
+    raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+KeyError: "None of [Index(['bruises', 'gill-attached', 'ring-number'], dtype='object')] are in the [columns]"
+[2024-08-18 16:51:47,910][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 16:51:47] "[35m[1mPOST /mushroom-poison-detector HTTP/1.1[0m" 500 -

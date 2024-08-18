@@ -1,0 +1,44 @@
+[2024-08-18 16:52:26,951][werkzeug][INFO] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2024-08-18 16:52:26,953][werkzeug][INFO] - [33mPress CTRL+C to quit[0m
+[2024-08-18 16:52:35,001][app][ERROR] - Exception on /mushroom-poison-detector [POST]
+Traceback (most recent call last):
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\Downloads\mlops_assignment\src\app.py", line 84, in mushroom_page
+    data_unseen = pd.DataFrame([final], columns=list(amber_cols))
+                                                ^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+[2024-08-18 16:52:35,001][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 16:52:35] "[35m[1mPOST /mushroom-poison-detector HTTP/1.1[0m" 500 -
+[2024-08-18 16:52:38,731][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 16:52:38] "GET / HTTP/1.1" 200 -
+[2024-08-18 16:52:39,883][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 16:52:39] "GET /mushroom-poison-detector HTTP/1.1" 200 -
+[2024-08-18 16:52:39,923][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 16:52:39] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-18 16:52:43,175][app][ERROR] - Exception on /mushroom-poison-detector [POST]
+Traceback (most recent call last):
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amber\Downloads\mlops_assignment\src\app.py", line 84, in mushroom_page
+    data_unseen = pd.DataFrame([final], columns=list(amber_cols))
+                                                ^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+[2024-08-18 16:52:43,182][werkzeug][INFO] - 127.0.0.1 - - [18/Aug/2024 16:52:43] "[35m[1mPOST /mushroom-poison-detector HTTP/1.1[0m" 500 -
