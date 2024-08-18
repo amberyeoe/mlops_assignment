@@ -16,47 +16,7 @@
       line-height: 1.5;
       background-color: #ffffff;
     }
-       
-    body {
-      font-size: 16px; 
-    }
 
-    @media (min-width: 768px) {
-      body {
-        font-size: 18px; 
-      }
-      h1 {
-        font-size: 3rem; 
-      }
-      .form-control-select {
-      font-size: 16px; 
-      padding: 0.2rem 0.5rem; 
-/* 
-      input.form-control {
-      font-size: 18px; 
-      padding: 0.7rem; 
-      } */
-    }
-
-    @media (min-width: 576px) {
-      body {
-        font-size: 25px;
-      }
-
-      h1 {
-        font-size: 2.5rem; 
-      }
-      
-      .form-control-select {
-      font-size: 20px; 
-      padding: 0.2rem 0.75rem; 
-      }
-
-      /* input.form-control {
-      font-size: 25px;
-      padding: 0.5rem;
-      } */
-    }
   </style>
 </head>
 
@@ -69,9 +29,10 @@
         <!-- Form to enter new data for predictions -->
         <form action="{{ url_for('mushroom_page')}}" method="POST">
             <!-- cap-shape -->
-            <div class="form-group">
-                <label for="cap-shape">Cap Shape:</label>
-                <select class="form-control form-control-select" id="cap-shape" name="cap-shape">
+            <div class="form-group row justify-content-center">
+              <div class="col-sm-1"></div>
+                <label for="cap-shape" class="col-sm-2 col-form-label">Cap Shape:</label>
+                <select class="form-control col-sm-6" id="cap-shape" name="cap-shape">
                     <option value="convex">Convex</option>
                     <option value="bell">Bell</option>
                     <option value="sunken">Sunken</option>
@@ -82,9 +43,10 @@
             </div>
             
             <!-- cap-surface -->
-            <div class="form-group">
-                <label for="cap-surface">Cap Surface:</label>
-                <select class="form-control form-control-select" id="cap-surface" name="cap-surface">
+            <div class="form-group row justify-content-center">
+              <div class="col-sm-1"></div>
+              <label for="cap-surface" class="col-sm-2 col-form-label">Cap Surface:</label>
+                <select class="form-control col-sm-6" id="cap-surface" name="cap-surface">
                     <option value="smooth">Smooth</option>
                     <option value="scaly">Scaly</option>
                     <option value="fibrous">Fibrous</option>
@@ -93,9 +55,10 @@
             </div>
             
             <!-- cap-color -->
-            <div class="form-group">
-                <label for="cap-color">Cap Color:</label>
-                <select class="form-control form-control-select" id="cap-color" name="cap-color">
+            <div class="form-group row justify-content-center">
+              <div class="col-sm-1"></div>
+              <label for="cap-color" class="col-sm-2 col-form-label">Cap Color:</label>
+                <select class="form-control col-sm-6" id="cap-color" name="cap-color">
                     <option value="brown">Brown</option>
                     <option value="yellow">Yellow</option>
                     <option value="white">White</option>
@@ -110,18 +73,20 @@
             </div>
 
             <!-- bruises -->
-            <div class="form-group">
-                <label for="bruises">Are there bruises:</label>
-                <select class="form-control form-control-select" id="bruises" name="bruises">
+            <div class="form-group row justify-content-center">
+              <div class="col-sm-1"></div>
+              <label for="bruises" class="col-sm-2 col-form-label">Are there bruises:</label>
+                <select class="form-control col-sm-6" id="bruises" name="bruises">
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </select>
             </div>
 
             <!-- odor -->
-            <div class="form-group">
-                <label for="odor">Odor:</label>
-                <select class="form-control form-control-select" id="odor" name="odor">
+            <div class="form-group row justify-content-center">
+              <div class="col-sm-1"></div>
+              <label for="odor" class="col-sm-2 col-form-label">Odor:</label>
+                <select class="form-control col-sm-6" id="odor" name="odor">
                     <option value="pungent">Pungent</option>
                     <option value="almond">Almond</option>
                     <option value="anise">Anise</option>
@@ -135,36 +100,40 @@
             </div>
 
             <!-- gill-attachment -->
-            <div class="form-group">
-                <label for="gill-attached">Gill Attached:</label>
-                <select class="form-control form-control-select" id="gill-attached" name="gill-attached">
+            <div class="form-group row justify-content-center">
+              <div class="col-sm-1"></div>
+              <label for="gill-attached" class="col-sm-2 col-form-label">Gill Attached:</label>
+                <select class="form-control col-sm-6" id="gill-attached" name="gill-attached">
                     <option value='1'>Attached</option>
                     <option value='0'>Not Attached</option>
                 </select>
             </div>
 
             <!-- gill-spacing -->
-            <div class="form-group">
-                <label for="gill-spacing">Gill Spacing:</label>
-                <select class="form-control form-control-select" id="gill-spacing" name="gill-spacing">
+            <div class="form-group row justify-content-center">
+              <div class="col-sm-1"></div>
+              <label for="gill-spacing" class="col-sm-2 col-form-label">Gill Spacing:</label>
+                <select class="form-control col-sm-6" id="gill-spacing" name="gill-spacing">
                     <option value="close">Close</option>
                     <option value="crowded">Crowded</option>
                 </select>
             </div>
 
             <!-- gill-size -->
-            <div class="form-group">
-                <label for="gill-size">Gill Size:</label>
-                <select class="form-control form-control-select" id="gill-size" name="gill-size">
+            <div class="form-group row justify-content-center">
+              <div class="col-sm-1"></div>
+              <label for="gill-size" class="col-sm-2 col-form-label">Gill Size:</label>
+                <select class="form-control col-sm-6" id="gill-size" name="gill-size">
                     <option value="narrow">Narrow</option>
                     <option value="broad">Broad</option>
                 </select>
             </div>
 
             <!-- gill-color -->
-            <div class="form-group">
-                <label for="gill-color">Gill Color:</label>
-                <select class="form-control form-control-select" id="gill-color" name="gill-color">
+            <div class="form-group row justify-content-center">
+              <div class="col-sm-1"></div>
+              <label for="gill-color" class="col-sm-2 col-form-label">Gill Color:</label>
+                <select class="form-control col-sm-6" id="gill-color" name="gill-color">
                     <option value="black">Black</option>
                     <option value="brown">Brown</option>
                     <option value="gray">Gray</option>
@@ -181,18 +150,20 @@
             </div>
 
             <!-- stalk-shape -->
-            <div class="form-group">
-                <label for="stalk-shape">Stalk Shape:</label>
-                <select class="form-control form-control-select" id="stalk-shape" name="stalk-shape">
+            <div class="form-group row justify-content-center">
+              <div class="col-sm-1"></div>
+              <label for="stalk-shape" class="col-sm-2 col-form-label">Stalk Shape:</label>
+                <select class="form-control col-sm-6" id="stalk-shape" name="stalk-shape">
                     <option value="enlarging">Enlarging</option>
                     <option value="tapering">Tapering</option>
                 </select>
             </div>
 
             <!-- stalk-root -->
-            <div class="form-group">
-                <label for="stalk-root">Stalk Root:</label>
-                <select class="form-control form-control-select" id="stalk-root" name="stalk-root">
+            <div class="form-group row justify-content-center">
+              <div class="col-sm-1"></div>
+              <label for="stalk-root" class="col-sm-2 col-form-label">Stalk Root:</label>
+                <select class="form-control col-sm-6" id="stalk-root" name="stalk-root">
                     <option value="equal">Equal</option>
                     <option value="club">Club</option>
                     <option value="bulbous">Bulbous</option>
@@ -201,9 +172,9 @@
             </div>
 
             <!-- stalk-surface-above-ring -->
-            <div class="form-group">
-                <label for="stalk-surface-above-ring">Stalk Surface Above Ring:</label>
-                <select class="form-control form-control-select" id="stalk-surface-above-ring" name="stalk-surface-above-ring">
+            <div class="form-group row justify-content-center">
+              <label for="stalk-surface-above-ring" class="col-sm-3 col-form-label">Stalk Surface Above Ring:</label>
+                <select class="form-control col-sm-6" id="stalk-surface-above-ring" name="stalk-surface-above-ring">
                     <option value="smooth">Smooth</option>
                     <option value="fibrous">Fibrous</option>
                     <option value="silky">Silky</option>
@@ -212,9 +183,9 @@
             </div>
 
             <!-- stalk-surface-below-ring -->
-            <div class="form-group">
-                <label for="stalk-surface-below-ring">Stalk Surface Below Ring:</label>
-                <select class="form-control form-control-select" id="stalk-surface-below-ring" name="stalk-surface-below-ring">
+            <div class="form-group row justify-content-center">
+              <label for="stalk-surface-below-ring" class="col-sm-3 col-form-label">Stalk Surface Below Ring:</label>
+                <select class="form-control col-sm-6" id="stalk-surface-below-ring" name="stalk-surface-below-ring">
                     <option value="smooth">Smooth</option>
                     <option value="fibrous">Fibrous</option>
                     <option value="scaly">Scaly</option>
@@ -223,9 +194,9 @@
             </div>
 
             <!-- stalk-color-above-ring -->
-            <div class="form-group">
-                <label for="stalk-color-above-ring">Stalk Color Above Ring:</label>
-                <select class="form-control form-control-select" id="stalk-color-above-ring" name="stalk-color-above-ring">
+            <div class="form-group row justify-content-center">
+              <label for="stalk-color-above-ring" class="col-sm-3 col-form-label">Stalk Color Above Ring:</label>
+                <select class="form-control col-sm-6" id="stalk-color-above-ring" name="stalk-color-above-ring">
                     <option value="white">White</option>
                     <option value="gray">Gray</option>
                     <option value="brown">Brown</option>
@@ -241,9 +212,9 @@
             </div>
 
             <!-- stalk-color-below-ring -->
-            <div class="form-group">
-                <label for="stalk-color-below-ring">Stalk Color Below Ring:</label>
-                <select class="form-control form-control-select" id="stalk-color-below-ring" name="stalk-color-below-ring">
+            <div class="form-group row justify-content-center">
+              <label for="stalk-color-below-ring" class="col-sm-3 col-form-label">Stalk Color Below Ring:</label>
+                <select class="form-control col-sm-6" id="stalk-color-below-ring" name="stalk-color-below-ring">
                     <option value="white">White</option>
                     <option value="gray">Gray</option>
                     <option value="brown">Brown</option>
@@ -259,9 +230,10 @@
             </div>
 
             <!-- veil-type -->
-            <div class="form-group">
-                <label for="veil-type">Veil Type:</label>
-                <select class="form-control form-control-select" id="veil-type" name="veil-type">
+            <div class="form-group row justify-content-center">
+              <div class="col-sm-1"></div>
+              <label for="veil-type" class="col-sm-2 col-form-label">Veil Type:</label>
+                <select class="form-control col-sm-6" id="veil-type" name="veil-type">
                     <option value="partial">Partial</option>
                     <option value="universal">Universal</option>
                     <option value="none">None</option>
@@ -269,9 +241,10 @@
             </div>
 
             <!-- veil-color -->
-            <div class="form-group">
-                <label for="veil-color">Veil Color:</label>
-                <select class="form-control form-control-select" id="veil-color" name="veil-color">
+            <div class="form-group row justify-content-center">
+              <div class="col-sm-1"></div>
+              <label for="veil-color" class="col-sm-2 col-form-label">Veil Color:</label>
+                <select class="form-control col-sm-6" id="veil-color" name="veil-color">
                     <option value="white">White</option>
                     <option value="brown">Brown</option>
                     <option value="orange">Orange</option>
@@ -280,15 +253,17 @@
             </div>
 
             <!-- ring-number -->
-            <div class="form-group">
-                <label for="ring-number">Ring Number:</label>
-                <input type="number" class="form-control" id="ring-number" name="ring-number" min="0" max="2" step="1" required>
+            <div class="form-group row justify-content-center">
+              <div class="col-sm-1"></div>
+              <label for="ring-number" class="col-sm-2 col-form-label">Ring Number:</label>
+                <input type="number" class="form-control col-sm-6" id="ring-number" name="ring-number" min="0" max="2" step="1" required>
             </div>
 
             <!-- ring-type -->
-            <div class="form-group">
-                <label for="ring-type">Ring Type:</label>
-                <select class="form-control form-control-select" id="ring-type" name="ring-type">
+            <div class="form-group row justify-content-center">
+              <div class="col-sm-1"></div>
+              <label for="ring-type" class="col-sm-2 col-form-label">Ring Type:</label>
+                <select class="form-control col-sm-6" id="ring-type" name="ring-type">
                     <option value="pendant">Pendant</option>
                     <option value="evanescent">Evanescent</option>
                     <option value="large">Large</option>
@@ -298,9 +273,10 @@
             </div>
 
             <!-- spore-print-color -->
-            <div class="form-group">
-                <label for="spore-print-color">Spore Print Color:</label>
-                <select class="form-control form-control-select" id="spore-print-color" name="spore-print-color">
+            <div class="form-group row justify-content-center">
+              <div class="col-sm-1"></div>
+              <label for="spore-print-color" class="col-sm-2 col-form-label">Spore Print Color:</label>
+                <select class="form-control col-sm-6" id="spore-print-color" name="spore-print-color">
                     <option value="black">Black</option>
                     <option value="brown">Brown</option>
                     <option value="purple">Purple</option>
@@ -314,9 +290,10 @@
             </div>
 
             <!-- population -->
-            <div class="form-group">
-                <label for="population">Population:</label>
-                <select class="form-control form-control-select" id="population" name="population">
+            <div class="form-group row justify-content-center">
+              <div class="col-sm-1"></div>
+              <label for="population" class="col-sm-2 col-form-label">Population:</label>
+                <select class="form-control col-sm-6" id="population" name="population">
                     <option value="scattered">Scattered</option>
                     <option value="numerous">Numerous</option>
                     <option value="abundant">Abundant</option>
@@ -327,9 +304,10 @@
             </div>
 
             <!-- habitat -->
-            <div class="form-group">
-                <label for="habitat">Habitat:</label>
-                <select class="form-control form-control-select" id="habitat" name="habitat">
+            <div class="form-group row justify-content-center">
+              <div class="col-sm-1"></div>
+              <label for="habitat" class="col-sm-2 col-form-label">Habitat:</label>
+                <select class="form-control col-sm-6" id="habitat" name="habitat">
                     <option value="woods">Woods</option>
                     <option value="paths">Paths</option>
                     <option value="urban">Urban</option>
@@ -338,10 +316,13 @@
                     <option value="waste">Waste</option>
                 </select>
             </div>
+          </div>
 
-            <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block">Predict Edibility</button>
-        </form>
+          <!-- Submit button -->
+          <div class="row justify-content-center mt-5">
+            <button type="submit" class="btn btn-primary btn-block col-sm-7">Predict Edibility</button>
+          </div>
+          </form>
 
         <br><br>
     </div>
