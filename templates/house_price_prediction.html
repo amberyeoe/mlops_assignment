@@ -17,6 +17,27 @@
 
      <!-- Form to enter new data for predictions  -->
     <form action="{{ url_for('house_page')}}"method="POST">
+        <!-- Town -->
+        <div class="form-group row justify-content-center">
+          <div class="col-sm-1"></div>
+          <label for="town" class="col-sm-2 col-form-label">Town:</label>
+          <select class="form-control col-sm-5" id="town" name="town" onchange="fetchStreets(this.value)">
+              <option value="">Select Town</option>
+              {% for town in towns %}
+              <option value="{{ town }}">{{ town }}</option>
+              {% endfor %}
+          </select>
+      </div>
+
+      <!-- Street Name -->
+      <div class="form-group row justify-content-center">
+          <div class="col-sm-1"></div>
+          <label for="street_name" class="col-sm-2 col-form-label">Street Name:</label>
+          <select class="form-control col-sm-5" id="street_name" name="street_name">
+              <option value="">Select Street</option>
+          </select>
+      </div>
+
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
 

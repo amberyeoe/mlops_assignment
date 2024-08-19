@@ -1,0 +1,5 @@
+[2024-08-20 05:17:08,410][werkzeug][WARNING] -  * Debugger is active!
+[2024-08-20 05:17:08,415][werkzeug][INFO] -  * Debugger PIN: 103-510-970
+[2024-08-20 05:18:07,350][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 05:18:07] "GET /house-price-prediction HTTP/1.1" 200 -
+[2024-08-20 05:18:07,370][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 05:18:07] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-20 05:19:09,113][werkzeug][INFO] -  * Detected change in 'C:\\Users\\javer\\Downloads\\mlops_assignment\\src\\app.py', reloading

@@ -81,9 +81,7 @@ def house_page():
 
         return render_template("house_price_prediction.html",pred=prediction)
     return  render_template("house_price_prediction.html")
-
     
-
 
 @app.route("/predict-house-api", methods=["POST"])
 def predict_house_api():
