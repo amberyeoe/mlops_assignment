@@ -72,13 +72,16 @@ def predict_mushroom_api():
 
 @app.route("/house-price-prediction", methods=["POST", "get"])
 def house_page():
-    int_features = [x for x in request.form.values()]
-    final = np.array(int_features)
-    data_unseen = pd.DataFrame([final], columns=variables.columns.housing)
-    prediction = pr.predict_model(house_model, data=data_unseen, round=0)
-    prediction = int(prediction.Label[0])
+    if request.method == "POST":
+        int_features = [x for x in request.form.values()]
+        final = np.array(int_features)
+        data_unseen = pd.DataFrame([final], columns=variables.columns.housing)
+        prediction = pr.predict_model(house_model, data=data_unseen, round=0)
+        prediction = int(prediction.Label[0])
 
-    return render_template("house_price_prediction.html",pred=prediction)
+        return render_template("house_price_prediction.html",pred=prediction)
+    return  render_template("house_price_prediction.html")
+
     
 
 
