@@ -1,0 +1,15 @@
+data:
+  mushroom:
+    path: data/02_mushroom_species_data.csv
+model:
+  mushroom:
+    path: models/mushroom-pipeline1
+columns:
+  mushroom:
+  - bruises
+  - odor
+  - gill-size
+  - gill-color
+  - stalk-surface-above-ring
+  - ring-type
+  - spore-print-color

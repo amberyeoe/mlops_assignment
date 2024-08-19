@@ -1,0 +1,7 @@
+[2024-08-19 12:09:42,748][werkzeug][WARNING] -  * Debugger is active!
+[2024-08-19 12:09:42,753][werkzeug][INFO] -  * Debugger PIN: 130-875-148
+[2024-08-19 12:09:42,865][werkzeug][INFO] - 127.0.0.1 - - [19/Aug/2024 12:09:42] "GET / HTTP/1.1" 200 -
+[2024-08-19 12:09:44,733][werkzeug][INFO] - 127.0.0.1 - - [19/Aug/2024 12:09:44] "GET /mushroom-poison-detector HTTP/1.1" 200 -
+[2024-08-19 12:09:44,768][werkzeug][INFO] - 127.0.0.1 - - [19/Aug/2024 12:09:44] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-19 12:09:47,214][werkzeug][INFO] - 127.0.0.1 - - [19/Aug/2024 12:09:47] "POST /mushroom-poison-detector HTTP/1.1" 200 -
+[2024-08-19 12:09:47,244][werkzeug][INFO] - 127.0.0.1 - - [19/Aug/2024 12:09:47] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
