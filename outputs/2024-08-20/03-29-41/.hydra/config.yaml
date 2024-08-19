@@ -1,0 +1,32 @@
+data:
+  mushroom:
+    path: data/02_mushroom_species_data.csv
+  housing:
+    path: data/01_housing_data.csv
+model:
+  mushroom:
+    path: models/mushroom-pipeline
+  housing:
+    path: models/housing-pipeline
+columns:
+  mushroom:
+  - bruises
+  - odor
+  - gill-size
+  - gill-color
+  - stalk-surface-above-ring
+  - ring-type
+  - spore-print-color
+  housing:
+  - town
+  - streat_name
+  - postal_code
+  - month
+  - flat_type
+  - flat_model
+  - storey_range
+  - floor_area_sqm
+  - lease_commence_data
+  - cbd_dist
+  - min_dist_mrt
+  - storey_number

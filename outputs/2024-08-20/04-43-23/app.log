@@ -1,0 +1,31 @@
+[2024-08-20 04:43:23,587][werkzeug][WARNING] -  * Debugger is active!
+[2024-08-20 04:43:23,592][werkzeug][INFO] -  * Debugger PIN: 103-510-970
+[2024-08-20 04:43:56,291][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:43:56] "GET / HTTP/1.1" 200 -
+[2024-08-20 04:43:57,841][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:43:57] "[35m[1mGET /house-price-prediction HTTP/1.1[0m" 500 -
+[2024-08-20 04:43:57,974][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:43:57] "GET /house-price-prediction?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2024-08-20 04:43:57,979][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:43:57] "GET /house-price-prediction?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2024-08-20 04:43:58,038][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:43:58] "GET /house-price-prediction?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2024-08-20 04:43:58,054][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:43:58] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2024-08-20 04:44:46,747][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:44:46] "[35m[1mGET /house-price-prediction HTTP/1.1[0m" 500 -
+[2024-08-20 04:44:46,796][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:44:46] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[2024-08-20 04:44:46,796][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:44:46] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[2024-08-20 04:44:46,807][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:44:46] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2024-08-20 04:46:49,127][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:46:49] "[35m[1mGET /house-price-prediction HTTP/1.1[0m" 500 -
+[2024-08-20 04:46:49,174][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:46:49] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[2024-08-20 04:46:49,178][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:46:49] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[2024-08-20 04:46:49,187][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:46:49] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2024-08-20 04:47:05,591][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:47:05] "[35m[1mGET /house-price-prediction HTTP/1.1[0m" 500 -
+[2024-08-20 04:47:05,614][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:47:05] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[2024-08-20 04:47:05,616][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:47:05] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[2024-08-20 04:47:05,641][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:47:05] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2024-08-20 04:47:05,653][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:47:05] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2024-08-20 04:47:09,282][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:47:09] "[35m[1mGET /house-price-prediction HTTP/1.1[0m" 500 -
+[2024-08-20 04:47:09,338][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:47:09] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[2024-08-20 04:47:09,340][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:47:09] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[2024-08-20 04:47:09,350][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:47:09] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2024-08-20 04:47:16,524][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:47:16] "[35m[1mGET /house-price-prediction HTTP/1.1[0m" 500 -
+[2024-08-20 04:47:16,549][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:47:16] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[2024-08-20 04:47:16,550][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:47:16] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[2024-08-20 04:47:16,575][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:47:16] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2024-08-20 04:47:16,588][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 04:47:16] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2024-08-20 04:48:15,293][werkzeug][INFO] -  * Detected change in 'C:\\Users\\javer\\Downloads\\mlops_assignment\\src\\app.py', reloading

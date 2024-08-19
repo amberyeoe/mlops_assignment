@@ -1,14 +1,18 @@
-data:
+data: # get the data
   mushroom:
     path: "data/02_mushroom_species_data.csv"
 
+  housing: 
+    path: "data/01_housing_data.csv"
 
-model:
+
+model: # path to pipeline
   mushroom:
     path: "models/mushroom-pipeline"
+  housing:
+    path: "models/house-pipeline"
 
-
-columns:
+columns: # for list
   mushroom: 
     - "bruises"
     - "odor"
@@ -17,6 +21,22 @@ columns:
     - "stalk-surface-above-ring"
     - "ring-type"
     - "spore-print-color"
+
+  housing:
+    - "town"
+    - "streat_name"
+    - "postal_code"
+    - "month"
+    - "flat_type"
+    - "flat_model"
+    - "storey_range"
+    - "floor_area_sqm"
+    - "lease_commence_data"
+    - "cbd_dist"
+    - "min_dist_mrt"
+    - "storey_number"
+
+
 
 
 

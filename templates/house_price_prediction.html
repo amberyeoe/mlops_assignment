@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Predict Insurance Bill</title>
+  <title>House Price Prediction</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
@@ -13,17 +13,10 @@
     {% include 'includes/navbar.html' %}
 
  <div class="container center">
-	<h1>Predict Insurance Bill</h1>
+	<h1>House Price Prediction</h1>
 
      <!-- Form to enter new data for predictions  -->
-    <form action="{{ url_for('predict')}}"method="POST">
-      <input type="text" name="age" placeholder="Age" required="required" /><br>
-    	<input type="text" name="sex" placeholder="Sex" required="required" /><br>
-        <input type="text" name="bmi" placeholder="BMI" required="required" /><br>
-        <input type="text" name="children" placeholder="Children" required="required" /><br>
-        <input type="text" name="smoker" placeholder="Smoker" required="required" /><br>
-        <input type="text" name="region" placeholder="Region" required="required" /><br>
-
+    <form action="{{ url_for('house_page')}}"method="POST">
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
 
