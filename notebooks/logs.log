@@ -8900,3 +8900,48 @@ _catboost.CatBoostError: There is no trained model to use get_all_params(). Use 
 2024-08-19 18:56:04,155:INFO:save_model() successfully completed......................................
 2024-08-19 18:56:15,237:INFO:Initializing load_model()
 2024-08-19 18:56:15,237:INFO:load_model(model_name=../models/house-pipeline.pkl, platform=None, authentication=None, verbose=True)
+2024-08-19 19:06:23,620:INFO:Initializing save_model()
+2024-08-19 19:06:23,620:INFO:save_model(model=<catboost.core.CatBoostRegressor object at 0x000001F8801D4F10>, model_name=../models/house-pipeline, prep_pipe_=Pipeline(memory=FastMemory(location=C:\Users\javer\AppData\Local\Temp\joblib),
+         steps=[('date_feature_extractor',
+                 TransformerWrapper(include=['month'],
+                                    transformer=ExtractDateTimeFeatures())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['postal_code', 'floor_area_sqm',
+                                             'lease_commence_date', 'cbd_dist',
+                                             'min_dist_mrt', 'storey_number'],
+                                    transformer=Simpl...
+                ('bin_numeric_features',
+                 TransformerWrapper(include=['postal_code'],
+                                    transformer=KBinsDiscretizer(encode='ordinal',
+                                                                 strategy='kmeans'))),
+                ('remove_outliers',
+                 TransformerWrapper(transformer=RemoveOutliers(random_state=123))),
+                ('transformation',
+                 TransformerWrapper(transformer=PowerTransformer(standardize=False))),
+                ('normalize',
+                 TransformerWrapper(transformer=StandardScaler()))]), verbose=True, use_case=MLUsecase.REGRESSION, kwargs={})
+2024-08-19 19:06:23,620:INFO:Adding model into prep_pipe
+2024-08-19 19:06:23,648:INFO:../models/house-pipeline.pkl saved in current working directory
+2024-08-19 19:06:23,667:INFO:Pipeline(memory=Memory(location=None),
+         steps=[('date_feature_extractor',
+                 TransformerWrapper(include=['month'],
+                                    transformer=ExtractDateTimeFeatures())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['postal_code', 'floor_area_sqm',
+                                             'lease_commence_date', 'cbd_dist',
+                                             'min_dist_mrt', 'storey_number'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 Tran...
+                                    transformer=KBinsDiscretizer(encode='ordinal',
+                                                                 strategy='kmeans'))),
+                ('remove_outliers',
+                 TransformerWrapper(transformer=RemoveOutliers(random_state=123))),
+                ('transformation',
+                 TransformerWrapper(transformer=PowerTransformer(standardize=False))),
+                ('normalize', TransformerWrapper(transformer=StandardScaler())),
+                ('trained_model',
+                 <catboost.core.CatBoostRegressor object at 0x000001F8801D4F10>)])
+2024-08-19 19:06:23,667:INFO:save_model() successfully completed......................................
+2024-08-19 19:06:26,087:INFO:Initializing load_model()
+2024-08-19 19:06:26,087:INFO:load_model(model_name=../models/house-pipeline.pkl, platform=None, authentication=None, verbose=True)
