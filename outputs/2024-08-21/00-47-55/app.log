@@ -1,0 +1,11 @@
+[2024-08-21 00:47:55,907][werkzeug][WARNING] -  * Debugger is active!
+[2024-08-21 00:47:55,907][werkzeug][INFO] -  * Debugger PIN: 141-315-364
+[2024-08-21 00:47:56,375][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 00:47:56] "POST /mushroom-poison-detector HTTP/1.1" 200 -
+[2024-08-21 00:47:56,411][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 00:47:56] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-21 00:49:03,998][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 00:49:03] "GET /house-price-prediction HTTP/1.1" 200 -
+[2024-08-21 00:49:04,028][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 00:49:04] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-21 00:49:27,983][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 00:49:27] "POST /house-price-prediction HTTP/1.1" 200 -
+[2024-08-21 00:49:28,011][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 00:49:28] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-21 00:51:18,461][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 00:51:18] "GET /mushroom-poison-detector HTTP/1.1" 200 -
+[2024-08-21 00:51:18,538][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 00:51:18] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-21 00:52:16,954][werkzeug][INFO] -  * Detected change in 'c:\\Users\\Amber\\Downloads\\mlops_assignment\\src\\app.py', reloading

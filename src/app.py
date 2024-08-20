@@ -1,14 +1,11 @@
 from flask import Flask, request, url_for, redirect, render_template, jsonify
 
-# from pycaret.regression import *
-# from pycaret.classification import *
-
 import pandas as pd
 import os
 import pycaret.classification as pc
 import pycaret.regression as pr
+import pycaret.anomaly as pa
 
-# from pycaret.anomaly import *
 import pandas as pd
 import numpy as np
 
@@ -24,8 +21,6 @@ def load_models(cfg: DictConfig):
     return variables
 
 load_models()
-print(variables.model.mushroom.path)
-print(variables.model.housing.path)
 
 house_model = pr.load_model(variables.model.housing.path)
 mushroom_model = pc.load_model(variables.model.mushroom.path)
@@ -33,28 +28,44 @@ mushroom_model = pc.load_model(variables.model.mushroom.path)
 # gavin_model = load_model("deployment_28042020")
 # gavin_cols = ["age", "sex", "bmi", "children", "smoker", "region"]
 
-
 @app.route("/")
 def home():
     return render_template("home.html")
 
+# load data
+mushroom_data = pd.read_csv(variables.data.mushroom.path)
+
 # Mushrooms
-@app.route("/mushroom-poison-detector", methods=["POST", "get"])
+@app.route("/mushroom-poison-detector", methods=["POST", "GET"])
 def mushroom_page():
+    # get values for dropdown form
+    odors = mushroom_data['odor'].unique().tolist()
+    gillsizes = mushroom_data['gill-size'].unique().tolist()
+    gillcolors = mushroom_data['gill-color'].unique().tolist()
+    stalksurfaces = mushroom_data['stalk-surface-above-ring'].unique().tolist()
+    ringtypes = mushroom_data['ring-type'].unique().tolist()
+    sporecolors = mushroom_data['spore-print-color'].unique().tolist()
+
+    # process form when submitted
     if request.method == "POST":
+
+        # change submitted form into list and converted into a dataframe
         features = [x for x in request.form.values()]
         final = np.array(features)
         data_unseen = pd.DataFrame([final], columns=variables.columns.mushroom)
 
+        # ensure datatype is correct
         int_columns = ["bruises"]
         data_unseen[int_columns] = data_unseen[int_columns].astype(int)
 
+        # pass prediction into the model
         prediction = pc.predict_model(mushroom_model, data=data_unseen)
         prediction = prediction["prediction_label"].values[0]
 
-        return render_template("mushroom_poison_detector.html", pred=prediction)
+        return render_template("mushroom_poison_detector.html", pred=prediction, odors = odors, gillcolors=gillcolors, gillsizes=gillsizes, stalksurfaces=stalksurfaces, ringtypes=ringtypes, sporecolors=sporecolors)
 
-    return render_template("mushroom_poison_detector.html")
+    return render_template("mushroom_poison_detector.html", odors = odors, gillcolors=gillcolors, gillsizes=gillsizes, stalksurfaces=stalksurfaces, ringtypes=ringtypes, sporecolors=sporecolors)
+
 
 
 @app.route("/predict-mushroom-api", methods=["POST"])
@@ -70,22 +81,23 @@ def predict_mushroom_api():
     prediction = prediction["prediction_label"].values[0]
     return jsonify(prediction)
 
+
 # Load the unique values from the CSV files
-streets_by_town_df = pd.read_csv('C:/Users/javer/Downloads/mlops_assignment2/data/housing/street_names_by_town.csv')
-flat_types_df = pd.read_csv('C:/Users/javer/Downloads/mlops_assignment2/data/housing/flat_types.csv')
-storey_range_df = pd.read_csv('C:/Users/javer/Downloads/mlops_assignment2/data/housing/storey_range.csv')
-flat_model_df = pd.read_csv('C:/Users/javer/Downloads/mlops_assignment2/data/housing/flat_model.csv')
-
-# Create a dictionary mapping towns to street names
-streets_by_town = streets_by_town_df.set_index('town')['street_names'].apply(eval).to_dict()
-
-# Extract unique values from the dataset
-flat_types = flat_types_df['flat_type'].tolist()
-storey_range = storey_range_df['storey_range'].tolist()
-flat_model = flat_model_df['flat_model'].tolist()
+streets_by_town_df = pd.read_csv('data/housing/street_names_by_town.csv')
+flat_types_df = pd.read_csv('data/housing/flat_types.csv')
+storey_range_df = pd.read_csv('data/housing/storey_range.csv')
+flat_model_df = pd.read_csv('data/housing/flat_model.csv')
 
 @app.route("/house-price-prediction", methods=["POST", "GET"])
 def house_page():
+    # Create a dictionary mapping towns to street names
+    streets_by_town = streets_by_town_df.set_index('town')['street_names'].apply(eval).to_dict()
+
+    # Extract unique values from the dataset
+    flat_types = flat_types_df['flat_type'].tolist()
+    storey_range = storey_range_df['storey_range'].tolist()
+    flat_model = flat_model_df['flat_model'].tolist()
+
     if request.method == "POST":
         # Extract form data
         form_data = request.form.to_dict()

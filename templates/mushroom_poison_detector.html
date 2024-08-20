@@ -29,9 +29,9 @@
         <form action="{{ url_for('mushroom_page')}}" method="POST">
             <!-- bruises -->
             <div class="form-group row justify-content-center">
-              <div class="col-sm-1"></div>
-              <label for="bruises" class="col-sm-2 col-form-label">Are there bruises:</label>
-                <select class="form-control col-sm-5" id="bruises" name="bruises">
+              <label for="bruises" class="col-sm-2 col-form-label">Bruises:</label>
+                <select class="form-control col-sm-5" id="bruises" name="bruises" required>
+                    <option value="" selected disabled>Are there bruises</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </select>
@@ -39,94 +39,71 @@
 
             <!-- odor -->
             <div class="form-group row justify-content-center">
-              <div class="col-sm-1"></div>
               <label for="odor" class="col-sm-2 col-form-label">Odor:</label>
-                <select class="form-control col-sm-5" id="odor" name="odor">
-                    <option value="pungent">Pungent</option>
-                    <option value="almond">Almond</option>
-                    <option value="anise">Anise</option>
-                    <option value="none">None</option>
-                    <option value="foul">Foul</option>
-                    <option value="creosote">Creosote</option>
-                    <option value="fishy">Fishy</option>
-                    <option value="spicy">Spicy</option>
-                    <option value="musty">Musty</option>
+                <select class="form-control col-sm-5" id="odor" name="odor" required>
+                    <option value="" selected disabled>What does it smell like</option>
+                    {% for odor in odors %}
+                      <option value="{{ odor }}">{{ odor }}</option>
+                    {% endfor %}
                 </select>
             </div>
 
             <!-- gill-size -->
             <div class="form-group row justify-content-center">
-              <div class="col-sm-1"></div>
               <label for="gill-size" class="col-sm-2 col-form-label">Gill Size:</label>
-                <select class="form-control col-sm-5" id="gill-size" name="gill-size">
-                    <option value="narrow">Narrow</option>
-                    <option value="broad">Broad</option>
+                <select class="form-control col-sm-5" id="gill-size" name="gill-size" required>
+                    <option value="" selected disabled>What does the gill look like</option>
+                    {% for size in gillsizes %}
+                    <option value="{{ size }}">{{ size }}</option>
+                    {% endfor %}
                 </select>
             </div>
 
             <!-- gill-color -->
             <div class="form-group row justify-content-center">
-              <div class="col-sm-1"></div>
               <label for="gill-color" class="col-sm-2 col-form-label">Gill Color:</label>
-                <select class="form-control col-sm-5" id="gill-color" name="gill-color">
-                    <option value="black">Black</option>
-                    <option value="brown">Brown</option>
-                    <option value="gray">Gray</option>
-                    <option value="pink">Pink</option>
-                    <option value="white">White</option>
-                    <option value="chocolate">Chocolate</option>
-                    <option value="purple">Purple</option>
-                    <option value="red">Red</option>
-                    <option value="buff">Buff</option>
-                    <option value="green">Green</option>
-                    <option value="yellow">Yellow</option>
-                    <option value="orange">Orange</option>
+                <select class="form-control col-sm-5" id="gill-color" name="gill-color" required>
+                    <option value="" selected disabled>What color is the gill</option>
+                    {% for color in gillcolors %}
+                    <option value="{{ color }}">{{ color }}</option>
+                    {% endfor %}
                 </select>
             </div>
 
             <!-- stalk-surface-above-ring -->
             <div class="form-group row justify-content-center">
-              <label for="stalk-surface-above-ring" class="col-sm-3 col-form-label">Stalk Surface Above Ring:</label>
-                <select class="form-control col-sm-5" id="stalk-surface-above-ring" name="stalk-surface-above-ring">
-                    <option value="smooth">Smooth</option>
-                    <option value="fibrous">Fibrous</option>
-                    <option value="silky">Silky</option>
-                    <option value="scaly">Scaly</option>
+              <label for="stalk-surface-above-ring" class="col-sm-2 col-form-label">Stalk Surface Above Ring:</label>
+                <select class="form-control col-sm-5" id="stalk-surface-above-ring" name="stalk-surface-above-ring" required>
+                    <option value="" selected disabled>What does the the stalk surface above the ring feel like</option>
+                    {% for surface in stalksurfaces %}
+                    <option value="{{ surface }}">{{ surface }}</option>
+                    {% endfor %}
                 </select>
             </div>
 
             <!-- ring-type -->
             <div class="form-group row justify-content-center">
-              <div class="col-sm-1"></div>
               <label for="ring-type" class="col-sm-2 col-form-label">Ring Type:</label>
-                <select class="form-control col-sm-5" id="ring-type" name="ring-type">
-                    <option value="pendant">Pendant</option>
-                    <option value="evanescent">Evanescent</option>
-                    <option value="large">Large</option>
-                    <option value="flaring">Flaring</option>
-                    <option value="none">None</option>
+                <select class="form-control col-sm-5" id="ring-type" name="ring-type" required>
+                    <option value="" selected disabled>How does the ring of the mushroom look like</option>
+                    {% for ringtype in ringtypes %}
+                    <option value="{{ ringtype }}">{{ ringtype }}</option>
+                    {% endfor %}
                 </select>
             </div>
 
             <!-- spore-print-color -->
             <div class="form-group row justify-content-center">
-              <div class="col-sm-1"></div>
               <label for="spore-print-color" class="col-sm-2 col-form-label">Spore Print Color:</label>
-                <select class="form-control col-sm-5" id="spore-print-color" name="spore-print-color">
-                    <option value="black">Black</option>
-                    <option value="brown">Brown</option>
-                    <option value="purple">Purple</option>
-                    <option value="chocolate">Chocolate</option>
-                    <option value="white">White</option>
-                    <option value="yellow">Yellow</option>
-                    <option value="green">Green</option>
-                    <option value="orange">Orange</option>
-                    <option value="buff">Buff</option>
+                <select class="form-control col-sm-5" id="spore-print-color" name="spore-print-color" required>
+                    <option value="" selected disabled>What is the color of the spore</option>
+                    {% for sporecolor in sporecolors %}
+                    <option value="{{ sporecolor }}">{{ sporecolor }}</option>
+                    {% endfor %}
                 </select>
             </div>
 
           
-
             <!-- Submit button -->
             <div class="row justify-content-center mt-5">
               <button type="submit" class="btn btn-primary btn-block col-sm-7">Predict Edibility</button>
@@ -134,6 +111,7 @@
           </form>
 
         <br><br>
+
     </div>
     <!-- <br> -->
     <p class="px-4  text-right float-right">By: Amber (222809U)</p>
