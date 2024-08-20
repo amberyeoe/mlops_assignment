@@ -7,6 +7,7 @@
 </ul>
 
 <h3> Project Overview:</h3>
+
 1. Exploratory Data Analysis (EDA)
 2. Train, Validate, and Develop a Machine Learning Pipeline using PyCaret
 3. Build and Deploy a Front-End Web Application with Real-Time Prediction
