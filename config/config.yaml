@@ -24,17 +24,16 @@ columns: # for list
 
   housing:
     - "town"
-    - "streat_name"
+    - "street_name"
     - "postal_code"
     - "month"
     - "flat_type"
     - "flat_model"
-    - "storey_range"
     - "floor_area_sqm"
-    - "lease_commence_data"
+    - "storey_range"
+    - "lease_commence_date"
     - "cbd_dist"
     - "min_dist_mrt"
-    - "storey_number"
 
 
 
