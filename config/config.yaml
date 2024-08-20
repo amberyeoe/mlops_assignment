@@ -3,7 +3,7 @@ data: # get the data
     path: "data/02_mushroom_species_data.csv"
 
   housing: 
-    path: "/data/01_housing_data.csv"
+    path: "data/01_residential_data.xlsx"
 
 
 model: # path to pipeline
@@ -24,7 +24,7 @@ columns: # for list
 
   housing:
     - "town"
-    - "street_name"
+    - "streat_name"
     - "postal_code"
     - "month"
     - "flat_type"

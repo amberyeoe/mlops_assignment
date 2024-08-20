@@ -3,6 +3,7 @@ from flask import Flask, request, url_for, redirect, render_template, jsonify
 # from pycaret.regression import *
 # from pycaret.classification import *
 
+import pandas as pd
 import os
 import pycaret.classification as pc
 import pycaret.regression as pr
@@ -23,8 +24,8 @@ def load_models(cfg: DictConfig):
     return variables
 
 load_models()
-# print(variables.model.mushroom.path)
-# print(variables.model.housing.path)
+print(variables.model.mushroom.path)
+print(variables.model.housing.path)
 
 house_model = pr.load_model(variables.model.housing.path)
 mushroom_model = pc.load_model(variables.model.mushroom.path)
@@ -37,7 +38,7 @@ mushroom_model = pc.load_model(variables.model.mushroom.path)
 def home():
     return render_template("home.html")
 
-
+# Mushrooms
 @app.route("/mushroom-poison-detector", methods=["POST", "get"])
 def mushroom_page():
     if request.method == "POST":
@@ -70,8 +71,20 @@ def predict_mushroom_api():
     return jsonify(prediction)
 
 
-@app.route("/house-price-prediction", methods=["POST", "get"])
+# Load the housing data
+housing_data = pd.read_excel(variables.data.housing.path)
+    
+@app.route("/house-price-prediction", methods=["POST", "GET"])
 def house_page():
+
+    # Group by town and create a dictionary mapping towns to street names
+    streets_by_town = housing_data.groupby('town')['street_name'].unique().apply(list).to_dict()
+    
+    # Extract unique values from the dataset
+    flat_types = housing_data['flat_type'].unique().tolist()
+    storey_range = housing_data['storey_range'].unique().tolist()
+    flat_model = housing_data['flat_model'].unique().tolist()
+    
     if request.method == "POST":
         int_features = [x for x in request.form.values()]
         final = np.array(int_features)
@@ -79,9 +92,11 @@ def house_page():
         prediction = pr.predict_model(house_model, data=data_unseen, round=0)
         prediction = int(prediction.Label[0])
 
-        return render_template("house_price_prediction.html",pred=prediction)
-    return  render_template("house_price_prediction.html")
+        return render_template("house_price_prediction.html", pred=prediction, towns=streets_by_town.keys(), streets_by_town=streets_by_town, flat_types = flat_types, storey_range = storey_range, flat_model=flat_model)
+
     
+    return render_template("house_price_prediction.html", towns=streets_by_town.keys(), streets_by_town=streets_by_town, flat_types = flat_types, storey_range = storey_range, flat_model=flat_model)
+  
 
 @app.route("/predict-house-api", methods=["POST"])
 def predict_house_api():

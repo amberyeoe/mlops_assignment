@@ -6,47 +6,116 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
-  
+
 </head>
+
+
+<script>
+  function updateStreets() {
+      var townSelect = document.getElementById("town");
+      var streetSelect = document.getElementById("street_name");
+      var selectedTown = townSelect.value;
+
+      // Clear previous street options
+      streetSelect.innerHTML = "";
+
+      // Get the streets for the selected town
+      var streets = JSON.parse('{{ streets_by_town|tojson|safe }}')[selectedTown];
+
+      // Populate the street dropdown with the streets from the selected town
+      streets.forEach(function(street) {
+          var option = document.createElement("option");
+          option.text = street;
+          option.value = street;
+          streetSelect.add(option);
+      });
+  }
+</script>
 
 <body>
     {% include 'includes/navbar.html' %}
 
- <div class="container center">
-	<h1>House Price Prediction</h1>
+    <div class="container center">
+      <h1>House Price Prediction</h1>
 
-     <!-- Form to enter new data for predictions  -->
-    <form action="{{ url_for('house_page')}}"method="POST">
-        <!-- Town -->
-        <div class="form-group row justify-content-center">
-          <div class="col-sm-1"></div>
-          <label for="town" class="col-sm-2 col-form-label">Town:</label>
-          <select class="form-control col-sm-5" id="town" name="town" onchange="fetchStreets(this.value)">
-              <option value="">Select Town</option>
-              {% for town in towns %}
-              <option value="{{ town }}">{{ town }}</option>
+      <!-- Form to enter new data for predictions -->
+      <form action="{{ url_for('house_page')}}" method="POST">
+          <!-- Town Dropdown -->
+          <div class="form-group row justify-content-center">
+              <label for="town" class="col-sm-2 col-form-label">Town:</label>
+              <select class="form-control col-sm-5" id="town" name="town" onchange="updateStreets()" required>
+                  <option value="" selected disabled>Select Town</option>
+                  {% for town in towns %}
+                      <option value="{{ town }}">{{ town }}</option>
+                  {% endfor %}
+              </select>
+          </div>
+
+          <!-- Street Name Dropdown -->
+          <div class="form-group row justify-content-center">
+              <label for="street_name" class="col-sm-2 col-form-label">Street Name:</label>
+              <select class="form-control col-sm-5" id="street_name" name="street_name" required>
+                  <option value="" selected disabled>Select Street</option>
+              </select>
+          </div>
+
+          <!-- Month oF Sale Calender-->
+          <div class="form-group row justify-content-center">
+            <label for="sale_date" class="col-sm-2 col-form-label">Month of Sale:</label>
+            <input type="date" class="form-control col-sm-5" id="sale_date" name="month" 
+                   min="{{ min_date }}" max="{{ max_date }}" required>
+          </div>
+
+          <!-- Flat Type Dropdown -->
+          <div class="form-group row justify-content-center">
+            <label for="flat_type" class="col-sm-2 col-form-label">Flat Type:</label>
+            <select class="form-control col-sm-5" id="flat_type" name="flat_type" required>
+              <option value="" selected disabled>Select Flat Type</option>
+              {% for flat_type in flat_types %}
+                <option value="{{ flat_type }}">{{ flat_type }}</option>
               {% endfor %}
-          </select>
-      </div>
+            </select>
+          </div>
 
-      <!-- Street Name -->
-      <div class="form-group row justify-content-center">
-          <div class="col-sm-1"></div>
-          <label for="street_name" class="col-sm-2 col-form-label">Street Name:</label>
-          <select class="form-control col-sm-5" id="street_name" name="street_name">
-              <option value="">Select Street</option>
-          </select>
-      </div>
+          <!-- Flat Model Dropdown -->
+          <div class="form-group row justify-content-center">
+            <label for="flat_model" class="col-sm-2 col-form-label">Flat Model:</label>
+            <select class="form-control col-sm-5" id="flat_model" name="flat_model" required>
+              <option value="" selected disabled>Select Flat Model</option>
+              {% for flat_model in flat_model %}
+                <option value="{{ flat_model }}">{{ flat_model }}</option>
+              {% endfor %}
+            </select>
+          </div>
 
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-    </form>
+          <!-- Storey Range Dropdown -->
+          <div class="form-group row justify-content-center">
+            <label for="storey_range" class="col-sm-2 col-form-label">Storey Range:</label>
+            <select class="form-control col-sm-5" id="storey_range" name="storey_range" required>
+              <option value="" selected disabled>Select Storey Range:</option>
+              {% for storey_range in storey_range %}
+                <option value="{{ storey_range }}">{{ storey_range }}</option>
+              {% endfor %}
+            </select>
+          </div>
 
-   <br>
-   <br>
-  
-   
- </div>
- {{ pred }}
+          <!-- Floor Area Slider -->
+          <div class="form-group row justify-content-center">
+            <label for="floor_area" class="col-sm-2 col-form-label">Floor Area (sqm):</label>
+            <div class="col-sm-5">
+              <input type="range" class="form-control-range" id="floor_area" name="floor_area" min="30" max="300" value="100" oninput="this.nextElementSibling.value = this.value">
+              <output class="ml-2">100</output> sqm
+            </div>
+          </div>
+
+
+          <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+      </form>
+
+      <br><br>
+  </div>
+
+  {{ pred }}
 
  <!-- print out the prediction first if ok then change to use modal -->
 <!-- Bootstrap Modal for displaying prediction -->
