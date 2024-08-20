@@ -35,17 +35,19 @@ def home():
 # load data
 mushroom_data = pd.read_csv(variables.data.mushroom.path)
 
+# get values for dropdown form
+mushroom_attributes = {
+    "odors": mushroom_data['odor'].unique().tolist(),
+    "gillsizes": mushroom_data['gill-size'].unique().tolist(),
+    "gillcolors": mushroom_data['gill-color'].unique().tolist(),
+    "stalksurfaces": mushroom_data['stalk-surface-above-ring'].unique().tolist(),
+    "ringtypes": mushroom_data['ring-type'].unique().tolist(),
+    "sporecolors": mushroom_data['spore-print-color'].unique().tolist()
+}
+
 # Mushrooms
 @app.route("/mushroom-poison-detector", methods=["POST", "GET"])
 def mushroom_page():
-    # get values for dropdown form
-    odors = mushroom_data['odor'].unique().tolist()
-    gillsizes = mushroom_data['gill-size'].unique().tolist()
-    gillcolors = mushroom_data['gill-color'].unique().tolist()
-    stalksurfaces = mushroom_data['stalk-surface-above-ring'].unique().tolist()
-    ringtypes = mushroom_data['ring-type'].unique().tolist()
-    sporecolors = mushroom_data['spore-print-color'].unique().tolist()
-
     # process form when submitted
     if request.method == "POST":
 
@@ -62,10 +64,9 @@ def mushroom_page():
         prediction = pc.predict_model(mushroom_model, data=data_unseen)
         prediction = prediction["prediction_label"].values[0]
 
-        return render_template("mushroom_poison_detector.html", pred=prediction, odors = odors, gillcolors=gillcolors, gillsizes=gillsizes, stalksurfaces=stalksurfaces, ringtypes=ringtypes, sporecolors=sporecolors)
+        return render_template("mushroom_poison_detector.html", pred=prediction, mushroom_attributes=mushroom_attributes)
 
-    return render_template("mushroom_poison_detector.html", odors = odors, gillcolors=gillcolors, gillsizes=gillsizes, stalksurfaces=stalksurfaces, ringtypes=ringtypes, sporecolors=sporecolors)
-
+    return render_template("mushroom_poison_detector.html", mushroom_attributes=mushroom_attributes)
 
 
 @app.route("/predict-mushroom-api", methods=["POST"])

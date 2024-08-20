@@ -29,7 +29,7 @@
               <label for="odor" class="col-sm-2 col-form-label">Odor:</label>
               <select class="form-control col-sm-5" id="odor" name="odor" required>
                 <option value="" selected disabled>What does it smell like</option>
-                {% for odor in odors %}
+                {% for odor in mushroom_attributes['odors'] %}
                   <option value="{{ odor }}">{{ odor }}</option>
                 {% endfor %}
               </select>
@@ -40,7 +40,7 @@
               <label for="gill-size" class="col-sm-2 col-form-label">Gill Size:</label>
               <select class="form-control col-sm-5" id="gill-size" name="gill-size" required>
                 <option value="" selected disabled>What does the gill look like</option>
-                {% for size in gillsizes %}
+                {% for size in mushroom_attributes['gillsizes'] %}
                 <option value="{{ size }}">{{ size }}</option>
                 {% endfor %}
               </select>
@@ -51,7 +51,7 @@
               <label for="gill-color" class="col-sm-2 col-form-label">Gill Color:</label>
               <select class="form-control col-sm-5" id="gill-color" name="gill-color" required>
                 <option value="" selected disabled>What color is the gill</option>
-                {% for color in gillcolors %}
+                {% for color in mushroom_attributes['gillcolors'] %}
                 <option value="{{ color }}">{{ color }}</option>
                 {% endfor %}
               </select>
@@ -62,7 +62,7 @@
               <label for="stalk-surface-above-ring" class="col-sm-2 col-form-label">Stalk Surface Above Ring:</label>
                 <select class="form-control col-sm-5" id="stalk-surface-above-ring" name="stalk-surface-above-ring" required>
                     <option value="" selected disabled>What does the the stalk surface above the ring feel like</option>
-                    {% for surface in stalksurfaces %}
+                    {% for surface in mushroom_attributes['stalksurfaces'] %}
                     <option value="{{ surface }}">{{ surface }}</option>
                     {% endfor %}
                 </select>
@@ -73,7 +73,7 @@
               <label for="ring-type" class="col-sm-2 col-form-label">Ring Type:</label>
                 <select class="form-control col-sm-5" id="ring-type" name="ring-type" required>
                     <option value="" selected disabled>How does the ring of the mushroom look like</option>
-                    {% for ringtype in ringtypes %}
+                    {% for ringtype in mushroom_attributes['ringtypes'] %}
                     <option value="{{ ringtype }}">{{ ringtype }}</option>
                     {% endfor %}
                 </select>
@@ -84,7 +84,7 @@
               <label for="spore-print-color" class="col-sm-2 col-form-label">Spore Print Color:</label>
                 <select class="form-control col-sm-5" id="spore-print-color" name="spore-print-color" required>
                     <option value="" selected disabled>What is the color of the spore</option>
-                    {% for sporecolor in sporecolors %}
+                    {% for sporecolor in mushroom_attributes['sporecolors'] %}
                     <option value="{{ sporecolor }}">{{ sporecolor }}</option>
                     {% endfor %}
                 </select>
@@ -93,7 +93,7 @@
           
             <!-- Submit button -->
             <div class="row justify-content-center mt-5">
-              <button type="submit" class="btn btn-primary btn-block col-sm-7">Predict Edibility</button>
+              <button type="submit" class="btn btn-primary btn-block col-sm-8">Predict Edibility</button>
             </div>
           </form>
 
@@ -110,7 +110,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="predictionModalLabel">Prediction Result</h5>
+        <h5 class="modal-title" id="predictionModalLabel">Mushroom Prediction Result</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
