@@ -36,7 +36,7 @@
     {% include 'includes/navbar.html' %}
 
     <div class="container center">
-      <h1>House Price Prediction</h1>
+      <h1 class="text-center mb-4">House Price Prediction</h1>
 
       <!-- Form to enter new data for predictions -->
       <form action="{{ url_for('house_page')}}" method="POST">
@@ -149,6 +149,7 @@
   </div>
 
   {{ pred }}
+  
 
  <!-- print out the prediction first if ok then change to use modal -->
 <!-- Bootstrap Modal for displaying prediction -->

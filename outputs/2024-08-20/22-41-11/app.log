@@ -12,3 +12,8 @@
 [2024-08-20 23:49:14,616][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 23:49:14] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
 [2024-08-20 23:49:15,531][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 23:49:15] "GET /house-price-prediction HTTP/1.1" 200 -
 [2024-08-20 23:49:15,565][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 23:49:15] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-20 23:51:34,422][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 23:51:34] "GET /mushroom-poison-detector HTTP/1.1" 200 -
+[2024-08-20 23:51:34,473][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 23:51:34] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-20 23:52:16,690][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 23:52:16] "GET /house-price-prediction HTTP/1.1" 200 -
+[2024-08-20 23:52:16,747][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 23:52:16] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-20 23:59:36,800][werkzeug][INFO] -  * Detected change in 'C:\\Users\\javer\\Downloads\\mlops_assignment2\\src\\app.py', reloading
