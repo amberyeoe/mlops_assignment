@@ -93,7 +93,7 @@ def house_page():
         form_data['month'] = pd.to_datetime(form_data['month'])
         
         # Convert all data to the correct format and prepare for prediction
-        data_unseen = pd.DataFrame([form_data])
+        data_unseen = pd.DataFrame([form_data], columns=variables.columns.housing)
         
         # Ensure numeric fields are converted appropriately
         data_unseen = data_unseen.astype({
@@ -105,8 +105,8 @@ def house_page():
         })
         
         # Predict using the model
-        prediction = pr.predict_model(house_model, data=data_unseen, round=0)
-        prediction = int(prediction.Label[0])
+        prediction = pr.predict_model(house_model, data=data_unseen)
+        prediction = prediction["prediction_label"].values[0]
 
         return render_template("house_price_prediction.html", pred=prediction, towns=streets_by_town.keys(), streets_by_town=streets_by_town, flat_types=flat_types, storey_range=storey_range, flat_model=flat_model)
     
@@ -117,8 +117,8 @@ def predict_house_api():
     data = request.get_json(force=True)
     data_unseen = pd.DataFrame([data])
     prediction = pr.predict_model(house_model, data=data_unseen)
-    output = prediction.Label[0]
-    return jsonify(output)
+    prediction = prediction["prediction_label"].values[0]
+    return jsonify(prediction)
 
 
 if __name__ == "__main__":

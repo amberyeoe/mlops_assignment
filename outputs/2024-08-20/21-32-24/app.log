@@ -1,0 +1,3 @@
+[2024-08-20 21:33:07,110][werkzeug][WARNING] -  * Debugger is active!
+[2024-08-20 21:33:07,117][werkzeug][INFO] -  * Debugger PIN: 103-510-970
+[2024-08-20 21:33:10,207][werkzeug][INFO] -  * Detected change in 'C:\\Users\\javer\\Downloads\\mlops_assignment2\\src\\app.py', reloading
