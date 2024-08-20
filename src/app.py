@@ -70,22 +70,21 @@ def predict_mushroom_api():
     prediction = prediction["prediction_label"].values[0]
     return jsonify(prediction)
 
-
 # Load the housing data
 housing_data = pd.read_excel(variables.data.housing.path)
+# Group by town and create a dictionary mapping towns to street names
+streets_by_town = housing_data.groupby('town')['street_name'].unique().apply(list).to_dict()
     
 @app.route("/house-price-prediction", methods=["POST", "GET"])
 def house_page():
-
-    # Group by town and create a dictionary mapping towns to street names
-    streets_by_town = housing_data.groupby('town')['street_name'].unique().apply(list).to_dict()
-    
-    # Extract unique values from the dataset
-    flat_types = housing_data['flat_type'].unique().tolist()
-    storey_range = housing_data['storey_range'].unique().tolist()
-    flat_model = housing_data['flat_model'].unique().tolist()
     
     if request.method == "POST":
+        
+        # Extract unique values from the dataset
+        flat_types = housing_data['flat_type'].unique().tolist()
+        storey_range = housing_data['storey_range'].unique().tolist()
+        flat_model = housing_data['flat_model'].unique().tolist()
+        
          # Extract form data
         form_data = request.form.to_dict()
         
@@ -110,7 +109,7 @@ def house_page():
 
         return render_template("house_price_prediction.html", pred=prediction, towns=streets_by_town.keys(), streets_by_town=streets_by_town, flat_types=flat_types, storey_range=storey_range, flat_model=flat_model)
     
-    return render_template("house_price_prediction.html", towns=streets_by_town.keys(), streets_by_town=streets_by_town, flat_types=flat_types, storey_range=storey_range, flat_model=flat_model)
+    return render_template("house_price_prediction.html",streets_by_town=streets_by_town,towns=streets_by_town.keys())
 
 @app.route("/predict-house-api", methods=["POST"])
 def predict_house_api():
