@@ -1,0 +1,21 @@
+[2024-08-21 01:34:00,009][werkzeug][WARNING] -  * Debugger is active!
+[2024-08-21 01:34:00,014][werkzeug][INFO] -  * Debugger PIN: 103-510-970
+[2024-08-21 01:34:16,344][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 01:34:16] "GET / HTTP/1.1" 200 -
+[2024-08-21 01:34:18,717][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 01:34:18] "GET /house-price-prediction HTTP/1.1" 200 -
+[2024-08-21 01:34:18,752][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 01:34:18] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-21 01:34:20,341][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 01:34:20] "GET /house-price-prediction HTTP/1.1" 200 -
+[2024-08-21 01:34:20,368][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 01:34:20] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-21 01:34:21,233][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 01:34:21] "GET /mushroom-poison-detector HTTP/1.1" 200 -
+[2024-08-21 01:34:22,037][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 01:34:22] "GET /house-price-prediction HTTP/1.1" 200 -
+[2024-08-21 01:34:22,076][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 01:34:22] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-21 01:34:23,510][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 01:34:23] "GET /mushroom-poison-detector HTTP/1.1" 200 -
+[2024-08-21 01:34:39,837][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 01:34:39] "POST /mushroom-poison-detector HTTP/1.1" 200 -
+[2024-08-21 01:34:42,710][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 01:34:42] "GET /house-price-prediction HTTP/1.1" 200 -
+[2024-08-21 01:34:42,746][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 01:34:42] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-21 01:35:00,329][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 01:35:00] "POST /house-price-prediction HTTP/1.1" 200 -
+[2024-08-21 01:35:00,352][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 01:35:00] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-21 01:38:08,533][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 01:38:08] "GET /mushroom-poison-detector HTTP/1.1" 200 -
+[2024-08-21 01:38:12,692][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 01:38:12] "GET /house-price-prediction HTTP/1.1" 200 -
+[2024-08-21 01:38:12,740][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 01:38:12] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-21 01:38:41,260][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 01:38:41] "GET /house-price-prediction HTTP/1.1" 200 -
+[2024-08-21 01:38:41,303][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 01:38:41] "[33mGET /static/style.css HTTP/1.1[0m" 404 -

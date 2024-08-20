@@ -88,16 +88,17 @@ flat_types_df = pd.read_csv('data/housing/flat_types.csv')
 storey_range_df = pd.read_csv('data/housing/storey_range.csv')
 flat_model_df = pd.read_csv('data/housing/flat_model.csv')
 
+# Create a dictionary mapping towns to street names
+streets_by_town = streets_by_town_df.set_index('town')['street_names'].apply(eval).to_dict()
+
+# Extract unique values from the dataset
+flat_types = flat_types_df['flat_type'].tolist()
+storey_range = storey_range_df['storey_range'].tolist()
+flat_model = flat_model_df['flat_model'].tolist()
+
+
 @app.route("/house-price-prediction", methods=["POST", "GET"])
 def house_page():
-    # Create a dictionary mapping towns to street names
-    streets_by_town = streets_by_town_df.set_index('town')['street_names'].apply(eval).to_dict()
-
-    # Extract unique values from the dataset
-    flat_types = flat_types_df['flat_type'].tolist()
-    storey_range = storey_range_df['storey_range'].tolist()
-    flat_model = flat_model_df['flat_model'].tolist()
-
     if request.method == "POST":
         # Extract form data
         form_data = request.form.to_dict()
@@ -120,8 +121,11 @@ def house_page():
         # Predict using the model
         prediction = pr.predict_model(house_model, data=data_unseen)
         prediction = prediction["prediction_label"].values[0]
+        
+        # Format the prediction value
+        formatted_prediction = '${:,.0f}'.format(prediction)
 
-        return render_template("house_price_prediction.html", pred=prediction, towns=streets_by_town.keys(), streets_by_town=streets_by_town, flat_types=flat_types, storey_range=storey_range, flat_model=flat_model)
+        return render_template("house_price_prediction.html", pred=formatted_prediction, towns=streets_by_town.keys(), streets_by_town=streets_by_town, flat_types=flat_types, storey_range=storey_range, flat_model=flat_model)
     
     return render_template("house_price_prediction.html", streets_by_town=streets_by_town, towns=streets_by_town.keys(), flat_types=flat_types, storey_range=storey_range, flat_model=flat_model)
 

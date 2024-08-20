@@ -145,24 +145,26 @@
           <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
       </form>
 
+    </div>
+    <p class="px-4  text-right float-right">By: Javerine (220429P)</p>
+
       <br><br>
   </div>
 
-  {{ pred }}
   
 
  <!-- print out the prediction first if ok then change to use modal -->
 <!-- Bootstrap Modal for displaying prediction -->
-<!-- <div class="modal fade" id="predictionModal" tabindex="-1" role="dialog" aria-labelledby="predictionModalLabel" aria-hidden="true">
+<div class="modal fade" id="predictionModal" tabindex="-1" role="dialog" aria-labelledby="predictionModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
       <div class="modal-content">
           <div class="modal-header">
-              <h5 class="modal-title" id="predictionModalLabel">Prediction Result</h5>
+              <h5 class="modal-title" id="predictionModalLabel">Prediction Reale Price</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
               </button>
           </div>
-          <div class="modal-body">{{ pred }}
+          <div class="modal-body text-center"><h2><bold>{{ pred }}</bold></h2>
           </div>
           <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -181,7 +183,7 @@
     $('#predictionModal').modal('show');
     {% endif %}
   });
-</script> -->
+</script> 
 
 </body>
 
