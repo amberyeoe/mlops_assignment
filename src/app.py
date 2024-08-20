@@ -86,17 +86,31 @@ def house_page():
     flat_model = housing_data['flat_model'].unique().tolist()
     
     if request.method == "POST":
-        int_features = [x for x in request.form.values()]
-        final = np.array(int_features)
-        data_unseen = pd.DataFrame([final], columns=variables.columns.housing)
+         # Extract form data
+        form_data = request.form.to_dict()
+        
+        # Convert the 'month' to a datetime object
+        form_data['month'] = pd.to_datetime(form_data['month'])
+        
+        # Convert all data to the correct format and prepare for prediction
+        data_unseen = pd.DataFrame([form_data])
+        
+        # Ensure numeric fields are converted appropriately
+        data_unseen = data_unseen.astype({
+            'postal_code': 'int32',
+            # 'floor_area_sqm ': 'float64',
+            'lease_commence_date': 'int64',
+            'cbd_dist': 'float64',
+            'min_dist_mrt': 'float64'
+        })
+        
+        # Predict using the model
         prediction = pr.predict_model(house_model, data=data_unseen, round=0)
         prediction = int(prediction.Label[0])
 
-        return render_template("house_price_prediction.html", pred=prediction, towns=streets_by_town.keys(), streets_by_town=streets_by_town, flat_types = flat_types, storey_range = storey_range, flat_model=flat_model)
-
+        return render_template("house_price_prediction.html", pred=prediction, towns=streets_by_town.keys(), streets_by_town=streets_by_town, flat_types=flat_types, storey_range=storey_range, flat_model=flat_model)
     
-    return render_template("house_price_prediction.html", towns=streets_by_town.keys(), streets_by_town=streets_by_town, flat_types = flat_types, storey_range = storey_range, flat_model=flat_model)
-  
+    return render_template("house_price_prediction.html", towns=streets_by_town.keys(), streets_by_town=streets_by_town, flat_types=flat_types, storey_range=storey_range, flat_model=flat_model)
 
 @app.route("/predict-house-api", methods=["POST"])
 def predict_house_api():

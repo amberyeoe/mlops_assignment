@@ -1,0 +1,5 @@
+[2024-08-20 21:16:19,451][werkzeug][WARNING] -  * Debugger is active!
+[2024-08-20 21:16:19,456][werkzeug][INFO] -  * Debugger PIN: 103-510-970
+[2024-08-20 21:16:34,379][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 21:16:34] "GET / HTTP/1.1" 200 -
+[2024-08-20 21:16:38,628][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 21:16:38] "GET /house-price-prediction HTTP/1.1" 200 -
+[2024-08-20 21:16:38,667][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 21:16:38] "[33mGET /static/style.css HTTP/1.1[0m" 404 -

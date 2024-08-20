@@ -1,0 +1,8 @@
+[2024-08-20 18:32:32,287][werkzeug][WARNING] -  * Debugger is active!
+[2024-08-20 18:32:32,292][werkzeug][INFO] -  * Debugger PIN: 103-510-970
+[2024-08-20 18:32:35,232][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 18:32:35] "[35m[1mPOST /house-price-prediction HTTP/1.1[0m" 500 -
+[2024-08-20 18:32:35,256][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 18:32:35] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[2024-08-20 18:32:35,257][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 18:32:35] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[2024-08-20 18:32:35,271][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 18:32:35] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2024-08-20 18:32:35,305][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 18:32:35] "[36mGET /house-price-prediction?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2024-08-20 18:34:20,736][werkzeug][INFO] -  * Detected change in 'C:\\Users\\javer\\Downloads\\mlops_assignment2\\src\\app.py', reloading

@@ -3,7 +3,7 @@ data: # get the data
     path: "data/02_mushroom_species_data.csv"
 
   housing: 
-    path: "data/01_residential_data.xlsx"
+    path: "data/housing_clean.xlsx"
 
 
 model: # path to pipeline
