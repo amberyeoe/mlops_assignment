@@ -59,6 +59,14 @@
               </select>
           </div>
 
+          <!-- Postal Code -->
+          <div class="form-group row justify-content-center">
+            <label for="postal_code" class="col-sm-2 col-form-label">Postal Code:</label>
+            <div class="col-sm-5">
+              <input type="number" class="form-control" id="postal_code" name="postal_code" placeholder="Postal Code" min="50004" step="any" required>
+            </div>
+          </div>
+
           <!-- Month oF Sale Calender-->
           <div class="form-group row justify-content-center">
             <label for="sale_date" class="col-sm-2 col-form-label">Month of Sale:</label>
@@ -88,6 +96,15 @@
             </select>
           </div>
 
+           <!-- Floor Area Slider -->
+           <div class="form-group row justify-content-center">
+            <label for="floor_area" class="col-sm-2 col-form-label">Floor Area (sqm):</label>
+            <div class="col-sm-5">
+              <input type="range" class="form-control-range" id="floor_area" name="floor_area" min="30" max="300" value="100" oninput="this.nextElementSibling.value = this.value">
+              <output class="ml-2">100</output> sqm
+            </div>
+          </div>
+
           <!-- Storey Range Dropdown -->
           <div class="form-group row justify-content-center">
             <label for="storey_range" class="col-sm-2 col-form-label">Storey Range:</label>
@@ -99,12 +116,28 @@
             </select>
           </div>
 
-          <!-- Floor Area Slider -->
-          <div class="form-group row justify-content-center">
-            <label for="floor_area" class="col-sm-2 col-form-label">Floor Area (sqm):</label>
+           <!--  Lease Commence Year Slider -->
+           <div class="form-group row justify-content-center">
+            <label for="lease_commence_date" class="col-sm-2 col-form-label">Lease Commence Year:</label>
             <div class="col-sm-5">
-              <input type="range" class="form-control-range" id="floor_area" name="floor_area" min="30" max="300" value="100" oninput="this.nextElementSibling.value = this.value">
-              <output class="ml-2">100</output> sqm
+              <input type="range" class="form-control-range" id="lease_commence_date" name="lease_commence_date" min="1966" max="2019" value="2015" oninput="this.nextElementSibling.value = this.value">
+              <output class="ml-2">2015</output>
+            </div>
+          </div>
+
+          <!-- Distance to CBD -->
+          <div class="form-group row justify-content-center">
+            <label for="cbd_dist" class="col-sm-2 col-form-label">Distance to CBD (m):</label>
+            <div class="col-sm-5">
+              <input type="number" class="form-control" id="cbd_dist" name="cbd_dist" placeholder="Enter distance to CBD" min="592" step="any" required>
+            </div>
+          </div>
+
+          <!-- Distance to Nearest MRT Station -->
+          <div class="form-group row justify-content-center">
+            <label for="min_dist_mrt" class="col-sm-2 col-form-label">Distance to Nearest MRT (m):</label>
+            <div class="col-sm-5">
+              <input type="number" class="form-control" id="min_dist_mrt" name="min_dist_mrt" placeholder="Enter distance to nearest MRT" min="36" step="any" required>
             </div>
           </div>
 
