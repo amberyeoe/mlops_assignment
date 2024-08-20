@@ -24,7 +24,7 @@ columns: # for list
 
   housing:
     - "town"
-    - "streat_name"
+    - "street_name"
     - "postal_code"
     - "month"
     - "flat_type"

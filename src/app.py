@@ -23,8 +23,8 @@ def load_models(cfg: DictConfig):
     return variables
 
 load_models()
-print(variables.model.mushroom.path)
-print(variables.model.housing.path)
+# print(variables.model.mushroom.path)
+# print(variables.model.housing.path)
 
 house_model = pr.load_model(variables.model.housing.path)
 mushroom_model = pc.load_model(variables.model.mushroom.path)

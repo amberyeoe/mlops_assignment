@@ -13,6 +13,7 @@ hydra-core = "^1.3.2"
 dvc = "^3.53.2"
 kaleido = "0.2.1"
 pycaret = "3.3.2"
+catboost = "^1.2.5"
 
 [build-system]
 requires = ["poetry-core"]

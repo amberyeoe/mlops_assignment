@@ -1,0 +1,13 @@
+[2024-08-20 12:23:47,086][werkzeug][WARNING] -  * Debugger is active!
+[2024-08-20 12:23:47,097][werkzeug][INFO] -  * Debugger PIN: 141-315-364
+[2024-08-20 12:23:47,901][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 12:23:47] "GET / HTTP/1.1" 200 -
+[2024-08-20 12:23:50,157][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 12:23:50] "GET /house-price-prediction HTTP/1.1" 200 -
+[2024-08-20 12:23:50,201][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 12:23:50] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-20 12:23:59,689][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 12:23:59] "GET /mushroom-poison-detector HTTP/1.1" 200 -
+[2024-08-20 12:23:59,734][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 12:23:59] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-20 12:24:01,069][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 12:24:01] "GET /house-price-prediction HTTP/1.1" 200 -
+[2024-08-20 12:24:01,131][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 12:24:01] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-20 12:24:02,668][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 12:24:02] "GET /mushroom-poison-detector HTTP/1.1" 200 -
+[2024-08-20 12:24:02,716][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 12:24:02] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-20 12:24:56,623][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 12:24:56] "GET /house-price-prediction HTTP/1.1" 200 -
+[2024-08-20 12:24:56,669][werkzeug][INFO] - 127.0.0.1 - - [20/Aug/2024 12:24:56] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
