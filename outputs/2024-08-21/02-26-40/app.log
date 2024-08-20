@@ -1,0 +1,21 @@
+[2024-08-21 02:26:40,647][werkzeug][WARNING] -  * Debugger is active!
+[2024-08-21 02:26:40,651][werkzeug][INFO] -  * Debugger PIN: 103-510-970
+[2024-08-21 02:26:40,670][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:26:40] "GET / HTTP/1.1" 200 -
+[2024-08-21 02:26:40,724][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:26:40] "GET /house-price-prediction HTTP/1.1" 200 -
+[2024-08-21 02:26:40,773][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:26:40] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-21 02:26:45,174][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:26:45] "GET /mushroom-poison-detector HTTP/1.1" 200 -
+[2024-08-21 02:26:57,319][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:26:57] "GET /mushroom-poison-detector HTTP/1.1" 200 -
+[2024-08-21 02:27:00,658][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:27:00] "[35m[1mGET / HTTP/1.1[0m" 500 -
+[2024-08-21 02:27:00,733][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:27:00] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[2024-08-21 02:27:00,734][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:27:00] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[2024-08-21 02:27:00,761][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:27:00] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2024-08-21 02:27:00,796][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:27:00] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2024-08-21 02:27:25,114][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:27:25] "[33mGET /static/ HTTP/1.1[0m" 404 -
+[2024-08-21 02:27:29,104][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:27:29] "GET / HTTP/1.1" 200 -
+[2024-08-21 02:27:34,245][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:27:34] "GET /house-price-prediction HTTP/1.1" 200 -
+[2024-08-21 02:27:34,294][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:27:34] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-21 02:27:55,380][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:27:55] "POST /house-price-prediction HTTP/1.1" 200 -
+[2024-08-21 02:27:55,405][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:27:55] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[2024-08-21 02:28:06,064][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:28:06] "GET /house-price-prediction HTTP/1.1" 200 -
+[2024-08-21 02:28:10,586][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:28:10] "POST /house-price-prediction HTTP/1.1" 200 -
+[2024-08-21 02:28:10,611][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:28:10] "[33mGET /static/style.css HTTP/1.1[0m" 404 -

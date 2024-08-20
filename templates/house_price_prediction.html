@@ -35,14 +35,14 @@
 <body>
     {% include 'includes/navbar.html' %}
 
-    <div class="container center">
+    <div class="container mt-5">
       <h1 class="text-center mb-4">House Price Prediction</h1>
 
       <!-- Form to enter new data for predictions -->
       <form action="{{ url_for('house_page')}}" method="POST">
           <!-- Town Dropdown -->
           <div class="form-group row justify-content-center">
-              <label for="town" class="col-sm-2 col-form-label">Town:</label>
+              <label for="town" class="col-sm-3 col-form-label">Town:</label>
               <select class="form-control col-sm-5" id="town" name="town" onchange="updateStreets()" required>
                   <option value="" selected disabled>Select Town</option>
                   {% for town in towns %}
@@ -53,7 +53,7 @@
 
           <!-- Street Name Dropdown -->
           <div class="form-group row justify-content-center">
-              <label for="street_name" class="col-sm-2 col-form-label">Street Name:</label>
+              <label for="street_name" class="col-sm-3 col-form-label">Street Name:</label>
               <select class="form-control col-sm-5" id="street_name" name="street_name" required>
                   <option value="" selected disabled>Select Street</option>
               </select>
@@ -61,7 +61,7 @@
 
           <!-- Postal Code -->
           <div class="form-group row justify-content-center">
-            <label for="postal_code" class="col-sm-2 col-form-label">Postal Code:</label>
+            <label for="postal_code" class="col-sm-3 col-form-label">Postal Code:</label>
             <div class="col-sm-5">
               <input type="number" class="form-control" id="postal_code" name="postal_code" placeholder="Postal Code" min="50004" step="any" required>
             </div>
@@ -69,14 +69,14 @@
 
           <!-- Month oF Sale Calender-->
           <div class="form-group row justify-content-center">
-            <label for="sale_date" class="col-sm-2 col-form-label">Month of Sale:</label>
+            <label for="sale_date" class="col-sm-3 col-form-label">Month of Sale:</label>
             <input type="date" class="form-control col-sm-5" id="sale_date" name="month" 
                    min="2016-01-01" max="2023-07-01" required>
           </div>
 
           <!-- Flat Type Dropdown -->
           <div class="form-group row justify-content-center">
-            <label for="flat_type" class="col-sm-2 col-form-label">Flat Type:</label>
+            <label for="flat_type" class="col-sm-3 col-form-label">Flat Type:</label>
             <select class="form-control col-sm-5" id="flat_type" name="flat_type" required>
               <option value="" selected disabled>Select Flat Type</option>
               {% for flat_type in flat_types %}
@@ -87,7 +87,7 @@
 
           <!-- Flat Model Dropdown -->
           <div class="form-group row justify-content-center">
-            <label for="flat_model" class="col-sm-2 col-form-label">Flat Model:</label>
+            <label for="flat_model" class="col-sm-3 col-form-label">Flat Model:</label>
             <select class="form-control col-sm-5" id="flat_model" name="flat_model" required>
               <option value="" selected disabled>Select Flat Model</option>
               {% for flat_model in flat_model %}
@@ -98,7 +98,7 @@
 
            <!-- Floor Area Slider -->
            <div class="form-group row justify-content-center">
-            <label for="floor_area_sqm" class="col-sm-2 col-form-label">Floor Area (sqm):</label>
+            <label for="floor_area_sqm" class="col-sm-3 col-form-label">Floor Area (sqm):</label>
             <div class="col-sm-5">
               <input type="range" class="form-control-range" id="floor_area_sqm" name="floor_area_sqm" min="30" max="300" value="100" oninput="this.nextElementSibling.value = this.value">
               <output class="ml-2">100</output> sqm
@@ -107,7 +107,7 @@
 
           <!-- Storey Range Dropdown -->
           <div class="form-group row justify-content-center">
-            <label for="storey_range" class="col-sm-2 col-form-label">Storey Range:</label>
+            <label for="storey_range" class="col-sm-3 col-form-label">Storey Range:</label>
             <select class="form-control col-sm-5" id="storey_range" name="storey_range" required>
               <option value="" selected disabled>Select Storey Range:</option>
               {% for storey_range in storey_range %}
@@ -118,7 +118,7 @@
 
            <!--  Lease Commence Year Slider -->
            <div class="form-group row justify-content-center">
-            <label for="lease_commence_date" class="col-sm-2 col-form-label">Lease Commence Year:</label>
+            <label for="lease_commence_date" class="col-sm-3 col-form-label">Lease Commence Year:</label>
             <div class="col-sm-5">
               <input type="range" class="form-control-range" id="lease_commence_date" name="lease_commence_date" min="1966" max="2019" value="2015" oninput="this.nextElementSibling.value = this.value">
               <output class="ml-2">2015</output>
@@ -127,7 +127,7 @@
 
           <!-- Distance to CBD -->
           <div class="form-group row justify-content-center">
-            <label for="cbd_dist" class="col-sm-2 col-form-label">Distance to CBD (m):</label>
+            <label for="cbd_dist" class="col-sm-3 col-form-label">Distance to CBD (m):</label>
             <div class="col-sm-5">
               <input type="number" class="form-control" id="cbd_dist" name="cbd_dist" placeholder="Enter distance to CBD" min="592" step="any" required>
             </div>
@@ -135,7 +135,7 @@
 
           <!-- Distance to Nearest MRT Station -->
           <div class="form-group row justify-content-center">
-            <label for="min_dist_mrt" class="col-sm-2 col-form-label">Distance to Nearest MRT (m):</label>
+            <label for="min_dist_mrt" class="col-sm-3 col-form-label">Distance to Nearest MRT (m):</label>
             <div class="col-sm-5">
               <input type="number" class="form-control" id="min_dist_mrt" name="min_dist_mrt" placeholder="Enter distance to nearest MRT" min="36" step="any" required>
             </div>

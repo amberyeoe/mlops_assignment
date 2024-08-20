@@ -1,0 +1,7 @@
+[2024-08-21 02:25:50,524][werkzeug][WARNING] -  * Debugger is active!
+[2024-08-21 02:25:50,528][werkzeug][INFO] -  * Debugger PIN: 103-510-970
+[2024-08-21 02:25:50,546][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:25:50] "[33mGET /static/images/house.jpg HTTP/1.1[0m" 404 -
+[2024-08-21 02:25:53,202][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:25:53] "[33mGET /static/images/house.jpg HTTP/1.1[0m" 404 -
+[2024-08-21 02:25:57,215][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:25:57] "GET / HTTP/1.1" 200 -
+[2024-08-21 02:25:57,234][werkzeug][INFO] - 127.0.0.1 - - [21/Aug/2024 02:25:57] "[33mGET /static/images/house.jpeg HTTP/1.1[0m" 404 -
+[2024-08-21 02:26:36,190][werkzeug][INFO] -  * Detected change in 'C:\\Users\\javer\\Downloads\\mlops_assignment\\src\\app.py', reloading
