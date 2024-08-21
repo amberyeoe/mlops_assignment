@@ -1,7 +1,7 @@
 <h1>Machine Learning Operations Module</h1>
 <h3>Tasks</h3>
 <ul>
-  <li>Amber: Mushroom poison detector</li>
+  <li>Amber: Mushroom Poison Detector</li>
   <li>Javerine: House Selling Price Predictor</li>
   <li>Gavin: Anomaly Detection</li>
 </ul>

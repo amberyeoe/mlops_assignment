@@ -62,10 +62,11 @@ def mushroom_page():
 
         # pass prediction into the model
         prediction = pc.predict_model(mushroom_model, data=data_unseen)
-        prediction = prediction["prediction_label"].values[0]
+        prediction = prediction["prediction_label"].values[0]   
 
+        # return predictions and the dropdown attributes
         return render_template("mushroom_poison_detector.html", pred=prediction, mushroom_attributes=mushroom_attributes)
-
+    # provide dropdown attributes
     return render_template("mushroom_poison_detector.html", mushroom_attributes=mushroom_attributes)
 
 
@@ -141,4 +142,4 @@ def predict_house_api():
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 4000))
-    app.run(debug=True, host="0.0.0.0", port=port)
+    app.run(debug=False, host="0.0.0.0", port=port)
