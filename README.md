@@ -35,6 +35,5 @@ C:.
 ├───static
 │   └───images
 └───templates
-```
     └───includes 
-    ```
+ ```
