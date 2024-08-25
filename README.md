@@ -20,3 +20,18 @@
 - cookie-cutter, poetry
 
 <h3> Folder Structure</h3>
+C:.
+├───.dvc
+├───config
+├───data
+│   └───housing
+├───models
+├───notebooks
+│   ├───.ipynb_checkpoints
+│   └───catboost_info
+│       └───learn
+├───src
+├───static
+│   └───images
+└───templates
+    └───includes
