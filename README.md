@@ -1,25 +1,26 @@
-<h1>Machine Learning Operations Module</h1>
-<h3>Tasks</h3>
-<ul>
-  <li>Amber: Mushroom Poison Detector</li>
-  <li>Javerine: House Selling Price Predictor</li>
-  <li>Gavin: Anomaly Detection</li>
-</ul>
+Here is your tidied-up Markdown:
 
-<h3> Project Overview:</h3>
+# Machine Learning Operations Module
 
+### Tasks
+- **Amber:** Mushroom Poison Detector
+- **Javerine:** House Selling Price Predictor
+- **Gavin:** Anomaly Detection
+
+### Project Overview:
 1. Exploratory Data Analysis (EDA)
 2. Train, Validate, and Develop a Machine Learning Pipeline using PyCaret
 3. Build and Deploy a Front-End Web Application with Real-Time Prediction
 4. Set Up Development and Deployment Environment According to MLOps Lifecycle
 
-<h3> Tools Used </h3>
-- Poetry, Hydra and DVC 
+### Tools Used
+- Poetry, Hydra, and DVC
 
-<h3> Things to install</h3>
-- cookie-cutter, poetry
+### Things to Install
+- Cookiecutter, Poetry
 
-<h3> Folder Structure</h3>
+### Folder Structure
+```
 C:.
 ├───.dvc
 ├───config
@@ -34,4 +35,6 @@ C:.
 ├───static
 │   └───images
 └───templates
-    └───includes
+```
+    └───includes 
+    ```
