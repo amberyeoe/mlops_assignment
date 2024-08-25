@@ -1,6 +1,6 @@
-Here is your tidied-up Markdown:
-
 # Machine Learning Operations Module
+
+https://github.com/user-attachments/assets/177ca3f5-2159-40c7-9a9b-e643bf2cce5c
 
 ### Tasks
 - **Amber:** Mushroom Poison Detector
